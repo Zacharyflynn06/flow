@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_064541) do
+ActiveRecord::Schema.define(version: 2021_04_03_072417) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories_klasses", id: false, force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "klass_id", null: false
+    t.index ["category_id", "klass_id"], name: "index_categories_klasses_on_category_id_and_klass_id"
+    t.index ["klass_id", "category_id"], name: "index_categories_klasses_on_klass_id_and_category_id"
+  end
 
   create_table "klasses", force: :cascade do |t|
+    t.string "name"
     t.date "date"
     t.time "time"
     t.integer "length"
