@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
 
   resources :students
-  resources :klasses, as: :classes
+  resources :klasses
   resources :teachers
 
 end

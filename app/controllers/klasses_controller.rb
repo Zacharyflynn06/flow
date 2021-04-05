@@ -5,7 +5,7 @@ class KlassesController < ApplicationController
     end
     
     def index 
-        @klasss = Klass.all
+        @klass = Klass.all
     end
 
     def show
@@ -30,7 +30,7 @@ class KlassesController < ApplicationController
         @klass = Klass.find_by(id: params[:id])
     end
 
-    def klass_params
-        params.require((:klass).permit(:first_name, :last_name)
-    end
+    # def klass_params
+    #     params.require(:klass).permit(:first_name, :last_name)
+    # end
 end
