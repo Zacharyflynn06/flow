@@ -1,0 +1,2 @@
+still cant get associations between category and klass working
+    Should be has_and_belongs_to_many
