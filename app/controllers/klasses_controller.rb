@@ -5,10 +5,10 @@ class KlassesController < ApplicationController
     end
 
     def create
-        @klass = Klass.create(klass_params)
+        @klass = Klass.new(klass_params)
 
-        if @klass
-            byebug
+        if @klass.valid?
+            @klass.save
             redirect_to class_path(@klass)
         else
             render :new
