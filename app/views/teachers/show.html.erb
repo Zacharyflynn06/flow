@@ -1,6 +1,10 @@
 
 <h2><%= @teacher.first_name%> <%= @teacher.last_name %>'s Homepage</h2>
 
+<h3>Years Experience: <%= @teacher.years_experience %> </h3>
+
+<p>Bio: <%= @teacher.bio %></p>
+
 
 <div>
     <% @teacher.klasses.each do |k| %>

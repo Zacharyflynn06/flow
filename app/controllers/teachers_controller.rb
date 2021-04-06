@@ -7,8 +7,12 @@ class TeachersController < ApplicationController
     def create
         byebug
         @teacher = Teacher.new(teacher_params)
-        
-
+            if @teacher.valid?
+                @teacher.save
+                redirect_to teacher_path(@teacher)
+            else
+                render :new
+            end
     end
     
     def index 
@@ -20,11 +24,15 @@ class TeachersController < ApplicationController
     end
 
     def edit
-
+        find_teacher
     end
 
     def update
-        find_teacher
+        if @teacher.update(teacher_params)
+            redirect_to teacher_path(@teacher)
+        else
+            render :edit
+        end
     end
 
     def destroy

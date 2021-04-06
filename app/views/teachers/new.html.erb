@@ -1,19 +1,2 @@
 <h1>New Teacher Form</h1>
-
-
-<%= form_for @teacher do |f| %>
-    First Name: <%= f.text_field :first_name %>
-    <br>
-    Last_name: <%= f.text_field :last_name %>
-    <br>
-    Years Experience: <%= f.number_field :years_experience %>
-    <br>
-    Bio: <%= f.text_area :bio %>
-    <br>
-    Bio: <%= f.text_area :bio %>
-    <br>
-    
-    <%= f.submit %>
-
-
-<% end %>
+<%= render partial: 'form', locals: {teacher: @teacher} %>
