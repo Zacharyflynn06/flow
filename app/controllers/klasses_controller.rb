@@ -3,6 +3,10 @@ class KlassesController < ApplicationController
     def new
         @klass = Klass.new
     end
+
+    def create
+        @klass = Klass.new(klass_params)
+    end
     
     def index 
         @klass = Klass.all
@@ -30,7 +34,7 @@ class KlassesController < ApplicationController
         @klass = Klass.find_by(id: params[:id])
     end
 
-    # def klass_params
-    #     params.require(:klass).permit(:first_name, :last_name)
-    # end
+    def klass_params
+        params.require(:klass).permit(:name, :date, :time)
+    end
 end
