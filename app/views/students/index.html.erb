@@ -1,9 +1,9 @@
 <h1>Student Index</h1>
 
-<% @students.each do |s| %>
+<% @students.each do |student| %>
 
     <div>
-        <%= link_to (s.first_name), student_path(s) %> <%= s.last_name%>
+        <%= link_to student.full_name, student_path(student) %>
     </div>
 
 <% end %>

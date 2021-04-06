@@ -1,9 +1,13 @@
 <h1>Teachers Index</h1>
 
-<% @teachers.each do |t| %>
+<% @teachers.each do |teacher| %>
 
     <div>
-       <h4> <%= link_to (t.first_name), teacher_path(t) %> </h4>
+       <h4> <%= link_to teacher.full_name, teacher_path(teacher) %> </h4>
+       <ul>
+            <li>Bio: <%= teacher.bio %></li>
+            <li>Years Teaching: <%= teacher.years_experience %></li>
+       </ul>
     </div>
 
 <% end %>
