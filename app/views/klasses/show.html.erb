@@ -3,6 +3,13 @@
 <div>
     <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
     <p><%= @klass.description %></p>
+    <ul>
+        $<%= @klass.price %>
+        <%= @klass.length %>
+        <%= @klass.date %>
+        <%= @klass.time %>
+
+    </ul>
 </div>
 
 <%= link_to 'Edit', edit_class_path %>

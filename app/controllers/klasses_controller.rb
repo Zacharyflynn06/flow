@@ -31,7 +31,7 @@ class KlassesController < ApplicationController
         byebug
         find_klass
         if @klass.update(klass_params)
-            redirect_to klass_path(@klass)
+            redirect_to class_path(@klass)
         else
             render
         end

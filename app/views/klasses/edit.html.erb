@@ -1,5 +1,5 @@
 <h1>Edit a Class</h1>
-<%= form_for @klass, url: edit_class_path do |f| %>
+<%= form_for @klass, url: class_path(@klass) do |f| %>
 
     Name: <%= f.text_field :name %>
     <br>

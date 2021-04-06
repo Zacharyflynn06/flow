@@ -8,6 +8,8 @@
     <br>
     Description: <%= f.text_field :description %>
     <br>
+    Teacher: <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name, prompt: true) %>
+    <br>
     Level: <%= f.number_field :level %>
     <br>
     Price: <%= f.number_field :price %>
@@ -19,5 +21,6 @@
     Duration: <%= f.number_field :length %> minutes
     <br>
     <%= f.submit "Create" %>
+
   
 <% end %>
