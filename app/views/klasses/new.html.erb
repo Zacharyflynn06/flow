@@ -4,23 +4,7 @@
 
 <%= form_for @klass, url: classes_path(@klass) do |f| %>
 
-    Name: <%= f.text_field :name %>
-    <br>
-    Description: <%= f.text_field :description %>
-    <br>
-    Teacher: <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name, prompt: true) %>
-    <br>
-    Level: <%= f.number_field :level %>
-    <br>
-    Price: <%= f.number_field :price %>
-    <br>
-    Date: <%= f.date_field :date %>
-    <br>
-    Time: <%= f.time_field :time %>
-    <br>
-    Duration: <%= f.number_field :length %> minutes
-    <br>
-    <%= f.submit "Create" %>
+<%= render partial: 'form', locals: {f: f} %>
 
-  
+  <%= f.submit "Create Class" %>
 <% end %>

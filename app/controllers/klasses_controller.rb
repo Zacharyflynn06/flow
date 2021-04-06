@@ -33,12 +33,13 @@ class KlassesController < ApplicationController
         if @klass.update(klass_params)
             redirect_to class_path(@klass)
         else
-            render
+            render :edit
         end
     end
 
     def destroy
-
+        find_klass
+        @klass.destroy
     end
 
     private
@@ -48,6 +49,6 @@ class KlassesController < ApplicationController
     end
 
     def klass_params
-        params.require(:klass).permit(:name, :description, :level, :price, :length, :date, :time)
+        params.require(:klass).permit(:name, :description, :level, :price, :length, :day, :time)
     end
 end

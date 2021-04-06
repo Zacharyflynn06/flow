@@ -4,10 +4,10 @@
     <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
     <p><%= @klass.description %></p>
     <ul>
-        $<%= @klass.price %>
-        <%= @klass.length %>
-        <%= @klass.date %>
-        <%= @klass.time %>
+        <li>$<%= @klass.price %></li>
+        <li><%= @klass.length %> minutes </li>
+        <li><%= @klass.day %></li>
+        <li><%= @klass.time.strftime("%W") %></li>
 
     </ul>
 </div>

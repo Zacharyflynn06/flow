@@ -4,7 +4,7 @@ class CreateKlasses < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.integer :level
-      t.date :date
+      t.string :day
       t.time :time 
       t.integer :length
       t.integer :price

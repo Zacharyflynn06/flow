@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
     t.string "name"
     t.text "description"
     t.integer "level"
-    t.date "date"
+    t.string "day"
     t.time "time"
     t.integer "length"
     t.integer "price"
