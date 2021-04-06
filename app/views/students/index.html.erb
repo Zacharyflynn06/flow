@@ -3,7 +3,7 @@
 <% @students.each do |s| %>
 
     <div>
-        <%= s.first_name %> <%= s.last_name %> 
+        <%= link_to (s.first_name), student_path(s) %> <%= s.last_name%>
     </div>
 
 <% end %>

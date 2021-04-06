@@ -1,2 +1,20 @@
 <h1>Edit a Class</h1>
-<%= render 'form' %>
+<%= form_for @klass, url: edit_class_path do |f| %>
+
+    Name: <%= f.text_field :name %>
+    <br>
+    Description: <%= f.text_field :description %>
+    <br>
+    Level: <%= f.number_field :level %>
+    <br>
+    Price: <%= f.number_field :price %>
+    <br>
+    Date: <%= f.date_field :date %>
+    <br>
+    Time: <%= f.time_field :time %>
+    <br>
+    Duration: <%= f.number_field :length %> minutes
+    <br>
+    <%= f.submit "Save"%>
+
+<% end %>

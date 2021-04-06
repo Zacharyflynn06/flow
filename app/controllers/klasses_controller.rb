@@ -5,8 +5,15 @@ class KlassesController < ApplicationController
     end
 
     def create
+        byebug
         @klass = Klass.new(klass_params)
-        
+
+        if @klass.valid?
+            @klass.save
+            redirect_to class_path(@klass)
+        else
+            render :new
+        end
     end
     
     def index 
@@ -18,11 +25,17 @@ class KlassesController < ApplicationController
     end
 
     def edit
-
+        find_klass
     end
 
     def update
+        byebug
         find_klass
+        if @klass.update(klass_params)
+            redirect_to klass_path(@klass)
+        else
+            render
+        end
     end
 
     def destroy

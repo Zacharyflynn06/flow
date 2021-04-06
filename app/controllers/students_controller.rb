@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
         if @student.update(student_params)
             redirect_to student_path(@student)
         else
-            render :edit
+            render
         end
     end
 

@@ -1,7 +1,8 @@
 <h1>Class Show Page</h1>
 
-    <div>
-        <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
-        <p><%= @klass.description %></p>
-    
-    </div>
+<div>
+    <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
+    <p><%= @klass.description %></p>
+</div>
+
+<%= link_to 'Edit', edit_class_path %>
