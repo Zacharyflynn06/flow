@@ -3,11 +3,10 @@
 
 
 <div>
-    <% @teacher.klasses.each do |c| %>
-    
-        <h4><%= c.name %> - Level <%= c.level %></h4>
-        <br>
-        <%= c.description %>
-    
+    <% @teacher.klasses.each do |k| %>
+
+        <h4><%= link_to k.name, class_path(k) %> - Level <%= k.level %></h4>
+        <p><%= k.description %></p>
+
     <% end %>
 </div>
