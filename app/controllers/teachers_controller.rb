@@ -3,6 +3,13 @@ class TeachersController < ApplicationController
     def new
         @teacher = Teacher.new
     end
+
+    def create
+        byebug
+        @teacher = Teacher.new(teacher_params)
+        
+
+    end
     
     def index 
         @teachers = Teacher.all
@@ -31,7 +38,7 @@ class TeachersController < ApplicationController
     end
 
     def teacher_params
-        params.require(:teacher).permit(:first_name, :last_name, :years_experience)
+        params.require(:teacher).permit(:first_name, :last_name, :years_experience, :bio)
     end
 
 

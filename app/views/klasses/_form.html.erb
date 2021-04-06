@@ -1,1 +1,6 @@
 <h1>Class Form</h1>
+
+<% form_with(model: @klass, url: class_path(@klass)) do  %>
+    Class Name: <%= f.text_field :name %>
+
+<% end %>
