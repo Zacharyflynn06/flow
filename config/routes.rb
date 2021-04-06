@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
 
   resources :students
-  resources :klasses
+  
   resources :teachers
+    
+  resources :klasses, as: :classes, path: :classes
+
 
 end

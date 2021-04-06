@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
     end
     
     def index 
-  
+        @teachers = Teacher.all
     end
 
     def show
@@ -30,9 +30,9 @@ class TeachersController < ApplicationController
         @teacher = Teacher.find_by(id: params[:id])
     end
 
-    # def teacher_params
-    #     params.require((:teacher).permit(:first_name, :last_name, :years_experience)
-    # end
+    def teacher_params
+        params.require(:teacher).permit(:first_name, :last_name, :years_experience)
+    end
 
 
 end
