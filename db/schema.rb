@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
     t.integer "length"
     t.integer "price"
     t.integer "student_id"
-    t.integer "teacher_id", null: false
+    t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["student_id"], name: "index_klasses_on_student_id"

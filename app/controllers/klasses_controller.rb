@@ -5,11 +5,10 @@ class KlassesController < ApplicationController
     end
 
     def create
-        byebug
-        @klass = Klass.new(klass_params)
+        @klass = Klass.create(klass_params)
 
-        if @klass.valid?
-            @klass.save
+        if @klass
+            byebug
             redirect_to class_path(@klass)
         else
             render :new
@@ -49,6 +48,6 @@ class KlassesController < ApplicationController
     end
 
     def klass_params
-        params.require(:klass).permit(:name, :date, :time)
+        params.require(:klass).permit(:name, :description, :level, :price, :length, :date, :time)
     end
 end
