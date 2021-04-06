@@ -48,3 +48,9 @@
   }
 
 
+/* Errors */
+  .errors{
+    width: 100%;
+    background-color: #f2a154;
+    list-style-type: none;
+  }

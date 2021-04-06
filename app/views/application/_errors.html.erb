@@ -1,6 +1,6 @@
 <% if object.errors.any? %>
 
-    <div>
+    <div class="errors">
         <h2>There was a problem!</h2>
         <ul>
             <% object.errors.full_messages.each do |m| %>
