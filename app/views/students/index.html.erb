@@ -1,1 +1,9 @@
 <h1>Student Index</h1>
+
+<% @students.each do |s| %>
+
+    <div>
+        <%= s.first_name %> <%= s.last_name %> 
+    </div>
+
+<% end %>
