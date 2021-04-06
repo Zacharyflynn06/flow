@@ -1,3 +1,13 @@
-<h1>Teacher Homepage</h1>
 
-<h2><%= @teacher.first_name%> <%= @teacher.last_name %></h2>
+<h2><%= @teacher.first_name%> <%= @teacher.last_name %>'s Homepage</h2>
+
+
+<div>
+    <% @teacher.klasses.each do |c| %>
+    
+        <h4><%= c.name %> - Level <%= c.level %></h4>
+        <br>
+        <%= c.description %>
+    
+    <% end %>
+</div>

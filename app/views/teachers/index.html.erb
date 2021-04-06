@@ -3,7 +3,7 @@
 <% @teachers.each do |t| %>
 
     <div>
-        <%= t.first_name %> <%= t.last_name %> 
+        <%= link_to t.first_name , teacher_path(t) %>
     </div>
 
 <% end %>

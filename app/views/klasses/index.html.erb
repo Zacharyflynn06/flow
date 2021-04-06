@@ -1,1 +1,17 @@
 <h1>All the Classes</h1>
+
+<% @klass.each do |k| %>
+
+    <div>
+
+        <%= k.name %> 
+        <br>
+        <%= k.level %> 
+        <br>
+        <%= k.description %>         
+        <br>
+
+    </div>
+    <br>
+
+<% end %>

@@ -28,11 +28,13 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
+    t.text "description"
+    t.integer "level"
     t.date "date"
     t.time "time"
     t.integer "length"
     t.integer "price"
-    t.integer "student_id", null: false
+    t.integer "student_id"
     t.integer "teacher_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
     t.string "last_name"
     t.integer "years_experience"
     t.text "bio"
+    t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
