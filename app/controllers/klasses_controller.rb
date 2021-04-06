@@ -6,6 +6,7 @@ class KlassesController < ApplicationController
 
     def create
         @klass = Klass.new(klass_params)
+        
     end
     
     def index 

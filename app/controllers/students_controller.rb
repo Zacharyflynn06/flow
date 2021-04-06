@@ -24,11 +24,16 @@ class StudentsController < ApplicationController
     end
 
     def edit
-
+        find_student
     end
 
     def update
-        
+        find_student
+        if @student.update(student_params)
+            redirect_to student_path(@student)
+        else
+            render :edit
+        end
     end
 
     def destroy

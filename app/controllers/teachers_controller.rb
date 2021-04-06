@@ -5,7 +5,6 @@ class TeachersController < ApplicationController
     end
 
     def create
-        byebug
         @teacher = Teacher.new(teacher_params)
             if @teacher.valid?
                 @teacher.save
@@ -28,6 +27,7 @@ class TeachersController < ApplicationController
     end
 
     def update
+        find_teacher
         if @teacher.update(teacher_params)
             redirect_to teacher_path(@teacher)
         else
