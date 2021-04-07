@@ -14,6 +14,6 @@ Teacher.create(first_name: "Alex", last_name: "Cazet", bio: "I love teaching yog
 Teacher.create(first_name: "Genevieve", last_name: "Truckey", bio: "I teach yoga and love cats!", years_experience: 2)
 Teacher.create(first_name: "Johnny", last_name: "Bosbyshell", bio: "I play keybaords and love to do yoga!", years_experience: 1)
 
-Klass.create(teacher_id: 3, name: "Yoga for Beginners", level: 1, description: "Intro level yoga for those who have never done yoga.")
-Klass.create(teacher_id: 2, name: "Intermediate Yoga", level: 2, description:"Yoga for those who can do a vinyasa")
-Klass.create(teacher_id: 1, name: "Advanced Yoga", level:3, description: "Yoga for those who have mastered Intermediate Yoga")
+Klass.create(teacher_id: 3, name: "Yoga for Beginners", level: 1, description: "Intro level yoga for those who have never done yoga.", price: 12.00, duration: 30)
+Klass.create(teacher_id: 2, name: "Intermediate Yoga", level: 2, description:"Yoga for those who can do a vinyasa", price: 12.00, duration: 60 )
+Klass.create(teacher_id: 1, name: "Advanced Yoga", level:3, description: "Yoga for those who have mastered Intermediate Yoga", price: 20.00, duration: 90 )

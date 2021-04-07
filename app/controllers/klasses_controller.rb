@@ -47,6 +47,10 @@ class KlassesController < ApplicationController
     end
 
     def klass_params
-        params.require(:klass).permit(:name, :description, :level, :price, :length, :day, :time)
+        params.require(:klass).permit(:name, :description, :level, :price, :duration, :day, :time)
+    end
+
+    def standard_time(object)
+        object.time.strftime()
     end
 end

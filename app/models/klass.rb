@@ -1,13 +1,11 @@
 class Klass < ApplicationRecord
-  has_many :students
-  belongs_to :teacher, optional: true
+  belongs_to :student, class_name: "User"
+  belongs_to :teacher, class_name: "User"
 
-  validates :name, presence: :true
-  # validates :day, #presence: :true
-  # validates :time, #presence: :true, numericallity: :true
-  # validates :length, #presence: :true, numericallity: :true
+  validates :name, presence: true
+  validates :day, presence: true, inclusion: %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+  validates :time, presence: true
+  validates :duration, presence: true, numericality: true, inclusion: %w(30 60 90)
+  validates :price, presence: true
 
-  def standard_time
-    self.time.strftime("%I:%M %P")
-  end
 end

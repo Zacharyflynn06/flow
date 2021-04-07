@@ -1,13 +1,15 @@
+<%= render partial: 'application/errors', locals: {object: @klass} %>
+
 <h1>Class Show Page</h1>
 
 <div>
     <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
     <p><%= @klass.description %></p>
     <ul>
-        <li>$<%= @klass.price %></li>
-        <li><%= @klass.length %> minutes </li>
+        <li><%= @klass.duration %> minutes </li>
         <li><%= @klass.day %></li>
-        <li><%= @klass.standard_time %></li>
+        <li><%= @klass.time %></li>
+        <li><%= @klass.price %></li>
 
     </ul>
 </div>

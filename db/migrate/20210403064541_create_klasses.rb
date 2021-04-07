@@ -6,8 +6,8 @@ class CreateKlasses < ActiveRecord::Migration[6.1]
       t.integer :level
       t.string :day
       t.time :time 
-      t.integer :length
-      t.integer :price
+      t.integer :duration
+      t.decimal :price
 
       t.references :student, foreign_key: true
       t.references :teacher, foreign_key: true

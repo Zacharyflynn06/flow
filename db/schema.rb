@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_072417) do
+ActiveRecord::Schema.define(version: 2021_04_03_065415) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -19,21 +19,14 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories_klasses", id: false, force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.integer "klass_id", null: false
-    t.index ["category_id", "klass_id"], name: "index_categories_klasses_on_category_id_and_klass_id"
-    t.index ["klass_id", "category_id"], name: "index_categories_klasses_on_klass_id_and_category_id"
-  end
-
   create_table "klasses", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "level"
     t.string "day"
     t.time "time"
-    t.integer "length"
-    t.integer "price"
+    t.integer "duration"
+    t.decimal "price"
     t.integer "student_id"
     t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
@@ -42,19 +35,17 @@ ActiveRecord::Schema.define(version: 2021_04_03_072417) do
     t.index ["teacher_id"], name: "index_klasses_on_teacher_id"
   end
 
-  create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "teachers", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "username"
     t.string "first_name"
     t.string "last_name"
     t.integer "years_experience"
     t.text "bio"
-    t.boolean "admin"
+    t.integer "role"
+    t.string "password_digest"
+    t.integer "uid"
+    t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

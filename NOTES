@@ -1,13 +1,31 @@
-still cant get associations between category and klass working
+User - how to properly set up
+
+    admin
+    teacher
+    student
+
+klass
+    inclusion for duration not working
+    how to get price format on form
+
+
+category
+    still cant get associations between category and klass working
     Should be has_and_belongs_to_many
 
+sessions
+    can't start until user is figured out
 
-Anyone should be able to see all classes
 
-only community members can make posts
+gems
+    Better Errors?
 
-only admin teachers can make classes
+    Carrierwave?
 
-Where do i put my DAYS constant to use in collection_select
 
-strftime not working
+general_Notes
+    Anyone should be able to see all classes
+
+    only community members can make posts
+
+    only admin teachers can make classes

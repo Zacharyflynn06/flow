@@ -4,14 +4,14 @@
     <br>
     Teacher: <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name, prompt: true) %>
     <br>
-    Level: <%= f.number_field :level %>
+    Level: <%= f.select :level, options_for_select([1, 2, 3])%>
     <br>
     Price: <%= f.number_field :price %>
     <br>
-    Date: <%= f.text_field :day %>
+    Day of Week: <%= f.select :day, options_for_select(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]) %>
     <br>
     Time: <%= f.time_field :time %>
     <br>
-    Duration: <%= f.number_field :length %> minutes
+    Duration: <%= f.select :duration, options_for_select([30, 60, 90]) %> minutes
     <br>
   
