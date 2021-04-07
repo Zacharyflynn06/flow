@@ -8,4 +8,6 @@ only community members can make posts
 
 only admin teachers can make classes
 
-f.collection_boxes
+Where do i put my DAYS constant to use in collection_select
+
+strftime not working

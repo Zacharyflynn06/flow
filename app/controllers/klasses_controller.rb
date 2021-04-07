@@ -1,5 +1,7 @@
 class KlassesController < ApplicationController
 
+    before_action :find_klass, only: [:show, :edit, :update]
+
     def new
         @klass = Klass.new
     end
@@ -20,16 +22,12 @@ class KlassesController < ApplicationController
     end
 
     def show
-        find_klass
     end
 
     def edit
-        find_klass
     end
 
     def update
-        byebug
-        find_klass
         if @klass.update(klass_params)
             redirect_to class_path(@klass)
         else
