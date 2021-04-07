@@ -1,35 +1,41 @@
-class TeachersController < ApplicationController
+class UsersController < ApplicationController
 
     def new
-        @teacher = Teacher.new
+        @user = User.new
     end
 
     def create
-        @teacher = Teacher.new(teacher_params)
-            if @teacher.valid?
-                @teacher.save
-                redirect_to teacher_path(@teacher)
+        @user = User.new(user_params)
+            if @user.valid?
+                @user.save
+                if @user.teacher?
+                    redirect_to teacher_path(@user)
+                elsif @user.student?
+                    redirect_to student_path(@user)
+                elsif @user.admin?
+                    redirect_to admin_path(@user)
+                end
             else
                 render :new
             end
     end
     
     def index 
-        @teachers = Teacher.all
+        @users = User.all
     end
 
     def show
-        find_teacher
+        find_user
     end
 
     def edit
-        find_teacher
+        find_user
     end
 
     def update
-        find_teacher
-        if @teacher.update(teacher_params)
-            redirect_to teacher_path(@teacher)
+        find_user
+        if @user.update(user_params)
+            redirect_to user_path(@user)
         else
             render :edit
         end
@@ -41,12 +47,12 @@ class TeachersController < ApplicationController
 
     private
 
-    def find_teacher
-        @teacher = Teacher.find_by(id: params[:id])
+    def find_user
+        @user = User.find_by(id: params[:id])
     end
 
     def teacher_params
-        params.require(:teacher).permit(:first_name, :last_name, :years_experience, :bio)
+        params.require(:user).permit(:username, :role, :email, :first_name, :last_name, :years_experience, :bio)
     end
 
 

@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   post 'logout', to: 'sessions#destroy'
 
 
-  resources :students
-  
-  resources :teachers
+  resources :users
     
   resources :klasses, as: :classes, path: :classes
 
