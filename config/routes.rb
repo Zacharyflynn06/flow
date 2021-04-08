@@ -5,15 +5,11 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  post 'logout', to: 'sessions#destroy'
+  post '/logout', to: 'sessions#destroy'
 
-
-  # resources :teachers
-
-  resources :users
-
-  # resources :students
-    
+  resources :users do
+    resources :klasses, as: :classes, path: :classes, only: [:show, :index]
+  end
   resources :klasses, as: :classes, path: :classes
 
 
