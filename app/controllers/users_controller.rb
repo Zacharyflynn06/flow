@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+    before_action :find_user, only: [:show, :edit, :update]
+
+
+
     def new
         @user = User.new
     end
@@ -8,13 +12,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
             if @user.valid?
                 @user.save
-                if @user.teacher?
-                    redirect_to teacher_path(@user)
-                elsif @user.student?
-                    redirect_to student_path(@user)
-                elsif @user.admin?
-                    redirect_to admin_path(@user)
-                end
+                redirect_to user_path(@user)
             else
                 render :new
             end
@@ -25,23 +23,17 @@ class UsersController < ApplicationController
     end
 
     def show
-        find_user
+        
     end
 
     def edit
-        find_user
+        
     end
 
     def update
-        find_user
+        
         if @user.update(user_params)
-            if @user.teacher?
-                redirect_to teacher_path(@user)
-            elsif @user.student?
-                redirect_to student_path(@user)
-            elsif @user.admin?
-                redirect_to admin_path(@user)
-            end
+            redirect_to user_path(@user)
         else
             render :edit
         end
@@ -53,7 +45,7 @@ class UsersController < ApplicationController
 
     private
 
-    def find_user
+    def 
         @user = User.find(params[:id])
     end
 
