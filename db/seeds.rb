@@ -19,7 +19,7 @@ User.create(role: 1, email: "johnny@b.com", username: "johnnyb", password: "pass
 
 # admin
 User.create(role: 2, email: "zac@f.com", username: "zacf", password: "password", first_name: "Zac", last_name: "Flynn", bio: "I'm the admin")
-# 
+# classes
 Klass.create(teacher_id: 3, name: "Yoga for Beginners", level: 1, description: "Intro level yoga for those who have never done yoga.", price: 12.00, duration: 30)
 Klass.create(teacher_id: 2, name: "Intermediate Yoga", level: 2, description:"Yoga for those who can do a vinyasa", price: 12.00, duration: 60 )
 Klass.create(teacher_id: 1, name: "Advanced Yoga", level:3, description: "Yoga for those who have mastered Intermediate Yoga", price: 20.00, duration: 90 )

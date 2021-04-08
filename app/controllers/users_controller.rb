@@ -35,7 +35,13 @@ class UsersController < ApplicationController
     def update
         find_user
         if @user.update(user_params)
-            redirect_to user_path(@user)
+            if @user.teacher?
+                redirect_to teacher_path(@user)
+            elsif @user.student?
+                redirect_to student_path(@user)
+            elsif @user.admin?
+                redirect_to admin_path(@user)
+            end
         else
             render :edit
         end
@@ -48,7 +54,7 @@ class UsersController < ApplicationController
     private
 
     def find_user
-        @user = User.find_by(id: params[:id])
+        @user = User.find(params[:id])
     end
 
     def teacher_params
