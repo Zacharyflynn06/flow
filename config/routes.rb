@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :klasses, as: :classes, path: :classes, only: [:show, :index]
   end
+
   resources :klasses, as: :classes, path: :classes
 
 

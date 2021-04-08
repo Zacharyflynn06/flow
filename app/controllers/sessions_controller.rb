@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        byebug
-        session.delete :username
+        session.clear
+        redirect_to root_path
     end
 
 end
