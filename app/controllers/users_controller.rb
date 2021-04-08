@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     before_action :find_user, only: [:show, :edit, :update]
-    before_action :logged_in?
+    # before_action :logged_in?
 
 
 
