@@ -1,0 +1,12 @@
+
+<h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
+
+<p>Bio: <%= @user.bio %></p>
+<%= byebug %>
+<% if @user.teacher? %>
+    <h3>Years Experience: <%= @user.years_experience %> </h3>
+    <ul>
+        <% byebug %>
+    
+    </ul>
+<% end %>

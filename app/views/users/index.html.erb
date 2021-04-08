@@ -1,0 +1,13 @@
+<h1>Users Index</h1>
+
+<% @users.each do |user| %>
+
+    <div>
+       <h4> <%= link_to user.full_name, user_path(user) %> </h4>
+       <ul>
+            <li>Bio: <%= user.bio %></li>
+            <li>Years Teaching: <%= user.years_experience %></li>
+       </ul>
+    </div>
+
+<% end %>

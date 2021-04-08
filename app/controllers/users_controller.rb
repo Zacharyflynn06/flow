@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
     private
 
-    def 
+    def find_user
         @user = User.find(params[:id])
     end
 
