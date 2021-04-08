@@ -23,12 +23,8 @@ class SessionsController < ApplicationController
         end
     end
 
-    def show
-
-    end
-
     def destroy
-        session.delete
+        session.delete :username
     end
 
 end

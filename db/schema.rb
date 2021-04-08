@@ -50,6 +50,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_065415) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "klasses", "students"
-  add_foreign_key "klasses", "teachers"
+  add_foreign_key "klasses", "users", column: "student_id"
+  add_foreign_key "klasses", "users", column: "teacher_id"
 end

@@ -9,8 +9,8 @@ class CreateKlasses < ActiveRecord::Migration[6.1]
       t.integer :duration
       t.decimal :price
 
-      t.references :student, foreign_key: true
-      t.references :teacher, foreign_key: true
+      t.references :student, foreign_key: {to_table: :users}
+      t.references :teacher, foreign_key: {to_table: :users}
 
       t.timestamps
     end
