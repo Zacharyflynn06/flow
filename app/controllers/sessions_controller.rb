@@ -2,16 +2,25 @@ class SessionsController < ApplicationController
 
     def new
     
-
+        @user = User.new
     end
 
-    def create 
-        # user = User.find_by(name: params[:user][:name])
-        # user = user.try(:authenticate, params[:user][:password])
-        # return redirect_to(controller: 'sessions', action: 'new') unless user
-        # session[:user_id] = user.id
-        # @user = user
-        # redirect_to controller: 'welcome', action: 'home'
+    def create
+        byebug
+        @user = User.find_by(username: params[:username])
+        byebug
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id           
+            if @user.teacher?
+                redirect_to teacher_path(@user)
+            elsif @user.student?
+                redirect_to student_path(@user)
+            elsif @user.admin?
+                redirect_to admin_path(@user)
+            end
+        else 
+            render :new
+        end
     end
 
     def show

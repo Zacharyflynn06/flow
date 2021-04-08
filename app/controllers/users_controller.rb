@@ -57,8 +57,8 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def teacher_params
-        params.require(:user).permit(:username, :role, :email, :first_name, :last_name, :years_experience, :bio)
+    def user_params
+        params.require(:user).permit(:username, :role, :email, :password, :first_name, :last_name, :years_experience, :bio)
     end
 
 
