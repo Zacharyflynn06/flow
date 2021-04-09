@@ -26,7 +26,14 @@
  li.nav-bar {
      display: inline;
      float: left;
+     
  }
+
+ li.nav-bar-float-right {
+  display: inline;
+  float: right;
+  
+}
 
  li a {
     display: block;
@@ -44,7 +51,7 @@
 
   body{
       text-align: center;
-      background-color: #e7e6e1;
+      background: #e7e6e1 url("1600x900.jpg") no-repeat fixed;
   }
 
 

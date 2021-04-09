@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_065415) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_04_09_173351) do
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
@@ -33,6 +26,17 @@ ActiveRecord::Schema.define(version: 2021_04_03_065415) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["student_id"], name: "index_klasses_on_student_id"
     t.index ["teacher_id"], name: "index_klasses_on_teacher_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "klass_id", null: false
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["klass_id"], name: "index_reviews_on_klass_id"
+    t.index ["student_id"], name: "index_reviews_on_student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,4 +56,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_065415) do
 
   add_foreign_key "klasses", "users", column: "student_id"
   add_foreign_key "klasses", "users", column: "teacher_id"
+  add_foreign_key "reviews", "klasses"
+  add_foreign_key "reviews", "users", column: "student_id"
 end

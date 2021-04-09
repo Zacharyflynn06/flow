@@ -1,43 +1,66 @@
 <mxfile>
     <diagram id="BD0IHnstjnZ9T5ysEcdk" name="Page-1">
-        <mxGraphModel dx="1477" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#283618" math="0" shadow="0">
+        <mxGraphModel dx="1369" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#283618" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="18" value="" style="rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;shape=link;edgeStyle=orthogonalEdgeStyle;" parent="1" source="2" edge="1">
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" vertex="1">
+                    <mxGeometry x="17.5" y="90" width="240" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="34">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="312" y="256" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="662" y="340"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" vertex="1">
-                    <mxGeometry x="25" y="40" width="240" height="400" as="geometry"/>
-                </mxCell>
-                <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;shape=link;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" source="5" target="10" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="5" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" vertex="1">
-                    <mxGeometry x="315" y="80" width="240" height="400" as="geometry"/>
+                    <mxGeometry x="307.5" y="110" width="240" height="460" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="&lt;h1&gt;Klasses&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;date&lt;/div&gt;&lt;div&gt;time&lt;/div&gt;&lt;div&gt;length&lt;/div&gt;&lt;div&gt;price&lt;/div&gt;&lt;div&gt;references:student&lt;/div&gt;&lt;div&gt;references:teacher&lt;/div&gt;&lt;div&gt;has_many categories&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="300" y="120" width="270" height="340" as="geometry"/>
+                <mxCell id="37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8" target="25">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="252.5" y="405" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="288" y="330"/>
+                            <mxPoint x="288" y="270"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" vertex="1">
-                    <mxGeometry x="277.5" y="530" width="245" height="250" as="geometry"/>
+                <mxCell id="8" value="&lt;h1&gt;Klasses&lt;/h1&gt;&lt;div&gt;references:student&lt;/div&gt;&lt;div&gt;references:teacher&lt;/div&gt;&lt;div&gt;has_many categories&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;name&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;description&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;level:in&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;length&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;price&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;student_id&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;teacher_id&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="317.5" y="150" width="220" height="360" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="&lt;h1&gt;Category ?&lt;/h1&gt;&lt;div&gt;name&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;belongs_to class&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="550" width="200" height="140" as="geometry"/>
+                <mxCell id="25" value="&lt;h1&gt;User as Teacher&lt;/h1&gt;&lt;div&gt;has_many given_classes&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Attributes&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;username&lt;/div&gt;&lt;div&gt;first_name&lt;/div&gt;&lt;div&gt;last_name&lt;/div&gt;&lt;div&gt;password&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;bio&lt;/div&gt;&lt;div&gt;years_experience&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="130" width="215" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="&lt;h1&gt;User&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
-                    <mxGeometry y="115" width="270" height="340" as="geometry"/>
-                </mxCell>
-                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;shape=link;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" source="10" target="10" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;shape=link;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="392.5" y="1000" as="sourcePoint"/>
+                        <mxPoint x="392.5" y="1000" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="31" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="1" vertex="1">
-                    <mxGeometry x="570" y="520" width="245" height="250" as="geometry"/>
+                    <mxGeometry x="577.5" y="620" width="245" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="32" value="&lt;h1&gt;Comments ?&lt;/h1&gt;&lt;div&gt;content&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="592.5" y="550" width="200" height="140" as="geometry"/>
+                <mxCell id="33" value="&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" vertex="1" parent="1">
+                    <mxGeometry x="582.5" y="110" width="240" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="&lt;h1&gt;User as Student&lt;/h1&gt;&lt;div&gt;has_many teachers&lt;/div&gt;&lt;div&gt;through:taken_klasses&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;has_many reviews through&lt;/div&gt;&lt;div&gt;taken_klasses&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;username&lt;/div&gt;&lt;div&gt;first_name&lt;/div&gt;&lt;div&gt;last_name&lt;/div&gt;&lt;div&gt;password&lt;/div&gt;&lt;div&gt;email&lt;/div&gt;&lt;div&gt;bio&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="612.5" y="150" width="180" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="endArrow=classic;html=1;shape=link;" edge="1" parent="1" source="49">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="465" y="600" as="sourcePoint"/>
+                        <mxPoint x="530" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="&lt;h1&gt;Reviews&lt;/h1&gt;&lt;div&gt;user: belongs_to&lt;/div&gt;&lt;div&gt;klass: belongs_to&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;user_id&lt;/div&gt;&lt;div&gt;klass_id&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;content&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;sketch=0;fontColor=#FEFAE0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="592.5" y="670" width="220" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=link;" edge="1" parent="1" source="34" target="49">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="330.0666666666666" y="640" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
