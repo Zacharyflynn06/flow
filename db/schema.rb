@@ -10,33 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_173351) do
+ActiveRecord::Schema.define(version: 2021_04_09_195649) do
 
-  create_table "klasses", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "level"
-    t.string "day"
-    t.time "time"
+    t.datetime "time"
     t.integer "duration"
     t.decimal "price"
-    t.integer "student_id"
-    t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["student_id"], name: "index_klasses_on_student_id"
-    t.index ["teacher_id"], name: "index_klasses_on_teacher_id"
+    t.integer "teacher_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "student_id", null: false
-    t.integer "klass_id", null: false
+    t.integer "course_id", null: false
     t.integer "rating"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["klass_id"], name: "index_reviews_on_klass_id"
+    t.index ["course_id"], name: "index_reviews_on_course_id"
     t.index ["student_id"], name: "index_reviews_on_student_id"
+  end
+
+  create_table "student_teachers", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "teacher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_student_teachers_on_student_id"
+    t.index ["teacher_id"], name: "index_student_teachers_on_teacher_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,8 +59,8 @@ ActiveRecord::Schema.define(version: 2021_04_09_173351) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "klasses", "users", column: "student_id"
-  add_foreign_key "klasses", "users", column: "teacher_id"
-  add_foreign_key "reviews", "klasses"
+  add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users", column: "student_id"
+  add_foreign_key "student_teachers", "students"
+  add_foreign_key "student_teachers", "teachers"
 end
