@@ -6,7 +6,8 @@ klass
     change day and time to datetime 
 
 
-
+validate
+    if 30 or 60 or 90
 gems
     Better Errors?
 

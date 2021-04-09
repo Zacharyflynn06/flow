@@ -1,10 +1,13 @@
 class Course < ApplicationRecord
 
+  has_many :reviews
 
-  belongs_to :student, class_name: "User", optional: true
+  has_many :student_courses
+
+  has_many :students, through: :student_courses
+
   belongs_to :teacher, class_name: "User"
 
-  has_many :reviews
   # has_many :students, through: :reviews, class_name: "User"
 
   # validates :name, presence: true
