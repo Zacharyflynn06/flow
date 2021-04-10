@@ -11,13 +11,12 @@ class User < ApplicationRecord
     has_many :given_courses, foreign_key: :teacher_id, class_name: "Course"
     has_many :teacher_students, class_name: "StudentTeacher", foreign_key: :teacher_id
     has_many :students, -> {where("users.role = ?", User.roles[:student])}, through: :teacher_students, source: :student
-    
     has_many :reviews, through: :given_courses
-
 
     enum role: [:student, :teacher, :admin]
 
     has_secure_password
+    validates :username, uiqueness: true
     validates :bio, presence: true, if: lambda { self.role.to_s == 'teacher' }
     validates :years_experience, presence: true, if: lambda { self.role.to_s == 'teacher' }
 
