@@ -16,7 +16,7 @@ class User < ApplicationRecord
     enum role: [:student, :teacher, :admin]
 
     has_secure_password
-    validates :username, uiqueness: true
+    validates :username, uniqueness: true
     validates :bio, presence: true, if: lambda { self.role.to_s == 'teacher' }
     validates :years_experience, presence: true, if: lambda { self.role.to_s == 'teacher' }
 
