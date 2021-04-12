@@ -47,7 +47,7 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(@course).permit(:name, :description, :level, :price, :duration, :day, :time)
+        params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time)
     end
 
     def standard_time(object)

@@ -1,17 +1,15 @@
-<%= render partial: 'application/errors', locals: {object: @klass} %>
-
-<h1>Class Show Page</h1>
-
-<div>
-    <h3><%= @klass.name %> - Level <%= @klass.level %> </h3>
-    <p><%= @klass.description %></p>
+<%= render partial: 'application/errors', locals: {object: @course} %>
+<div class="wrapper">
+    <h1>Class Show Page</h1>
+    <h3><%= @course.name %> - Level <%= @course.level %> </h3>
+    <p><%= @course.description %></p>
     <ul>
-        <li><%= @klass.duration %> minutes </li>
-        <li><%= @klass.day %></li>
-        <li><%= @klass.time %></li>
-        <li><%= @klass.price %></li>
+        <li><%= @course.duration %> minutes </li>
+        <li><%= @course.day %></li>
+        <li><%= @course.time %></li>
+        <li><%= @course.price %></li>
 
     </ul>
 </div>
 
-<%= link_to 'Edit', edit_class_path %>
+<%= link_to 'Edit', edit_course_path %>

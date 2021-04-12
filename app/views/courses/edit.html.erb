@@ -1,9 +1,16 @@
-<%= render partial: 'application/errors', locals: {object: @klass} %>
+<h1 class="heading">Edit a Course</h1>
 
-<h1>Edit a Class</h1>
-<%= form_for @klass, url: class_path(@klass) do |f| %>
+<div class="wrapper">
+    <%= render partial: 'application/errors', locals: {object: @course} %>
 
-<%= render partial: 'form', locals: {f: f} %>
-<%= f.submit %>
+    
+    <%= form_for @course, url: course_path(@course) do |f| %>
+    
+    <%= render partial: 'form', locals: {f: f} %>
+    <%= f.submit %>
+    
+    <% end %>
 
-<% end %>
+</div>
+
+

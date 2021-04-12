@@ -1,11 +1,12 @@
-<div class="wrapper">
-    <h1>All the Courses</h1>
+<h1 class="heading">All the Courses</h1>
 
-    <% @course.each do |c| %>
+<div class="wrapper">
+
+    <% @course.each do |course| %>
 
         <div>
-            <h3><%= link_to c.name, course_path(c) %> - Level <%= c.level %> </h3>
-            <p><%= c.description %></p>    
+            <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
+            <p><%= course.description %></p>    
 
         </div>
         <br>
