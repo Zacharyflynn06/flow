@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
 
   resources :users do
-    resources :klasses, as: :classes, path: :classes, only: [:show, :index]
+    resources :courses, only: [:show, :index]
   end
 
-  resources :klasses, as: :classes, path: :classes
+  resources :courses
 
 
 end
