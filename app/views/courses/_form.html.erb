@@ -2,7 +2,7 @@
     <br>
     Description: <%= f.text_field :description %>
     <br>
-    Teacher: <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name, prompt: true) %>
+    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: true) %>
     <br>
     Level: <%= f.select :level, options_for_select([1, 2, 3])%>
     <br>

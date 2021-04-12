@@ -14,12 +14,12 @@
   <ul class="nav-bar">
     <% if !logged_in? %>
       <li class="nav-bar-float-right"> <%= link_to 'Login', login_path %> </li>
-      <li class="nav-bar"> <%= link_to 'Classes', classes_path %> </li>
+      <li class="nav-bar"> <%= link_to 'Courses', courses_path %> </li>
       <li class="nav-bar"> <%= link_to 'Teachers', users_path %> </li>
 
     <% else %>
 
-      <li class="nav-bar"> <%= link_to 'Classes', classes_path %> </li>
+      <li class="nav-bar"> <%= link_to 'Courses', courses_path %> </li>
       <li class="nav-bar"> <%= link_to 'Teachers', users_path %> </li>
       <li class="nav-bar-float-right"> <%= link_to "Logout", logout_path, method: "post" %>
 

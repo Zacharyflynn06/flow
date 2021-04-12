@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2021_04_09_222953) do
     t.string "name"
     t.text "description"
     t.integer "level"
-    t.datetime "time"
+    t.string "day"
+    t.time "time"
     t.integer "duration"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false

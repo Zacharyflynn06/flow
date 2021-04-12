@@ -5,7 +5,8 @@ class CreateCourses < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.integer :level
-      t.datetime :time
+      t.string :day
+      t.time :time
       t.integer :duration
       t.decimal :price
       t.timestamps

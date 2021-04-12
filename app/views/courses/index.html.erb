@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <h1>All the Courses</h1>
+
+    <% @course.each do |c| %>
+
+        <div>
+            <h3><%= link_to c.name, course_path(c) %> - Level <%= c.level %> </h3>
+            <p><%= c.description %></p>    
+
+        </div>
+        <br>
+
+    <% end %>
+
+    <%= link_to 'Create a new Course', new_course_path %>
+</div>
+
+
