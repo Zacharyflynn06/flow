@@ -1,6 +1,7 @@
 <%= render partial: 'application/errors', locals: {object: @course} %>
+<h1 class="heading"><%= @course.name %></h1>
+
 <div class="wrapper">
-    <h1>Class Show Page</h1>
     <h3><%= @course.name %> - Level <%= @course.level %> </h3>
     <p><%= @course.description %></p>
     <ul>
