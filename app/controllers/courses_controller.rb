@@ -13,10 +13,10 @@ class CoursesController < ApplicationController
 
     def create
         @course = Course.new(course_params)
-
+        # byebug
         if @course.valid?
             @course.save
-            redirect_to class_path(@course)
+            redirect_to course_path(@course)
         else
             render :new
         end
@@ -73,7 +73,7 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time, :user_id)
+        params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time, :teacher_id)
     end
 
 end

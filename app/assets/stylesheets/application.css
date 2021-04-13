@@ -61,7 +61,7 @@
     background-attachment: fixed;
     width: auto;
     
-
+    
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
@@ -150,14 +150,20 @@
     font-size: 1.25em;
   }
 
-
+  ul{
+    list-style-type: none;
+  }
 
 
 /* Errors */
   .errors{
     width: 100%;
     background-color: #f2a154;
-    list-style-type: none;
+    
     text-align: center;
     margin: 0;
+  }
+
+  li.errors{
+    list-style-type: none;
   }
