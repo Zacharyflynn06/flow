@@ -19,10 +19,30 @@ class CoursesController < ApplicationController
     end
     
     def index 
-        @course = Course.all
+        if params[:user_id]
+            @user = User.find(params[:user_id])
+            if @user.nil?
+                redirect_to users_path, alert: "Teacher not found"
+            else
+                @courses = @user.given_courses
+            end
+        else
+            @courses = Course.all
+        end
     end
 
     def show
+        if params[:user_id]
+            # byebug
+            @user = User.find_by(id: params[:user_id])
+            byebug
+            @course = @user.given_courses.find_by(id: params[:id])
+            if @course.nil?
+                redirect_to user_path(@user), alert: "Course not found"
+            end
+        else
+            @course = Course.find(params[:id])
+        end
     end
 
     def edit
@@ -30,7 +50,7 @@ class CoursesController < ApplicationController
 
     def update
         if @course.update(course_params)
-            redirect_to class_path(@course)
+            redirect_to course_path(@course)
         else
             render :edit
         end
@@ -48,7 +68,7 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time)
+        params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time, :user_id)
     end
 
     def standard_time(object)

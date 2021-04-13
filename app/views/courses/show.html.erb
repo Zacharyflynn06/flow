@@ -3,12 +3,13 @@
 
 <div class="wrapper">
     <h3><%= @course.name %> - Level <%= @course.level %> </h3>
+    <h3>Teacher: <%= @course.teacher.full_name %></h3> <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %>
     <p><%= @course.description %></p>
     <ul>
-        <li><%= @course.duration %> minutes </li>
-        <li><%= @course.day %></li>
-        <li><%= @course.time %></li>
-        <li><%= @course.price %></li>
+        <li>Duration: <%= @course.duration %> minutes </li>
+        <li>Day: <%= @course.day %></li>
+        <li>Time: <%= @course.time %></li>
+        <li>Price: <%= @course.price %></li>
 
     </ul>
 </div>

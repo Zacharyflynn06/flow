@@ -54,9 +54,7 @@
 
   body{
     margin: 0;
-    display: flex;
-    flex-flow: column wrap;
-    
+ 
     background: #e7e6e1 url("mountains.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -151,6 +149,8 @@
     display: inline-block;
     font-size: 1.25em;
   }
+
+
 
 
 /* Errors */
