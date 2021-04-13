@@ -36,14 +36,16 @@
   
 }
 
- li a {
+ .nav-bar a {
     display: block;
     color: #f7f6e7;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    justify-content: center;
   }
-  li a:hover {
+
+  .nav-bar a:hover {
     color: #f2a154;
   }
 
@@ -66,14 +68,15 @@
   }
 
   
-  a:link, a:visited {
+  .button a:link, .button a:visited {
     text-decoration: none;
-    color: white;
+    color: black;
   }
 
   a:hover, a:active {
     color: #f2a154;
   }
+
 
   input{
     justify-content: center;
@@ -96,7 +99,7 @@
     flex-direction: column;
   }
 
-
+  
   .site-title{
     justify-content: center;
     /* position: absolute;
@@ -131,8 +134,8 @@
   }
 
   .signup{
-    /* flex-direction: column; */
-    /* flex-flow: column: wrap */
+    width: 40%;
+    padding: 5px;
 
   }
 
