@@ -11,7 +11,7 @@
         <ul>
             <% @user.given_courses.each do |course| %>
            
-                <li><%= link_to course.name, user_course_path(@user.id, course.id) %></li>
+                <li><%= link_to course.name, course_path(course.id) %></li>
                 <li>Day: <%= course.day%></li>
                 <li>Time: <%= course.time %></li>
                 <li>Price: <%= course.price %></li>

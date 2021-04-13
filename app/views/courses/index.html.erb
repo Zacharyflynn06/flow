@@ -13,22 +13,16 @@
     <% @courses.each do |course| %>
 
         <div>
-            <% if params[:user_id] %>
-                <h3><%= link_to course.name, user_course_path(@user.id, course.id) %></h3>
-            <% else %>
-                <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
-            <% end %>
+            <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
             <p><%= course.description %></p>    
-
         </div>
-        <br>
 
     <% end %>
 
 </div>
 
+<% if logged_in? && current_user.admin? %>
 
-<% if current_user.admin? %>
     <div class="button">
         <%= link_to 'Create a new Course', new_course_path %>
     </div>

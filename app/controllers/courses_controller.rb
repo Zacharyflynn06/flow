@@ -36,17 +36,7 @@ class CoursesController < ApplicationController
     end
 
     def show
-        if params[:user_id]
-            # byebug
-            @user = User.find_by(id: params[:user_id])
-            byebug
-            @course = @user.given_courses.find_by(id: params[:id])
-            if @course.nil?
-                redirect_to user_path(@user), alert: "Course not found"
-            end
-        else
-            @course = Course.find(params[:id])
-        end
+        @course = Course.find(params[:id])
     end
 
     def edit
