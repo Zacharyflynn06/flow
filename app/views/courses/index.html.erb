@@ -25,7 +25,14 @@
 
     <% end %>
 
-    <%= link_to 'Create a new Course', new_course_path %>
 </div>
 
+
+<% if current_user.admin? %>
+    <div class="button">
+        <%= link_to 'Create a new Course', new_course_path %>
+    </div>
+<% end %>
+
+    
 

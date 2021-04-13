@@ -4,7 +4,11 @@ class CoursesController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
 
     def new
-        @course = Course.new
+        if params[:user_id] && !User.exists?(params[:user_id])
+            redirect_to users_path, alret: "User not found"
+        else
+            @course = Course.new
+        end
     end
 
     def create
@@ -46,6 +50,7 @@ class CoursesController < ApplicationController
     end
 
     def edit
+        redirect_if_not_admin
     end
 
     def update
@@ -71,7 +76,4 @@ class CoursesController < ApplicationController
         params.require(:course).permit(:name, :description, :level, :price, :duration, :day, :time, :user_id)
     end
 
-    def standard_time(object)
-        object.time.strftime()
-    end
 end

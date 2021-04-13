@@ -3,7 +3,7 @@
 
 <div class="wrapper">
     <h3><%= @course.name %> - Level <%= @course.level %> </h3>
-    <h3>Teacher: <%= @course.teacher.full_name %></h3> <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %>
+    <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
     <p><%= @course.description %></p>
     <ul>
         <li>Duration: <%= @course.duration %> minutes </li>
@@ -14,4 +14,6 @@
     </ul>
 </div>
 
-<div class="button"><%= link_to 'Edit', edit_course_path %></div>
+<% if current_user.admin? %>
+    <div class="button"><%= link_to 'Edit', edit_course_path %></div>
+<% end %>
