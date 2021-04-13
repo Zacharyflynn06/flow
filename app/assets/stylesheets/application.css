@@ -54,7 +54,9 @@
 
   body{
     margin: 0;
- 
+    display: flex;
+    flex-flow: column wrap;
+    
     background: #e7e6e1 url("mountains.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -76,7 +78,6 @@
   a:hover, a:active {
     color: #f2a154;
   }
-
 
   input{
     justify-content: center;
@@ -124,7 +125,9 @@
 
   .wrapper{
     background-color: rgba(184, 183, 183, 0.7);
-    border: 3px solid #e7e6e1;
+    border: 3px solid white;
+    display: flex;
+    flex-flow: column wrap;
     margin: auto;
     margin-top: 2.5em;
     margin-bottom: 2.5em;
@@ -136,8 +139,7 @@
   .signup{
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-
+    justify-content: center;
   }
 
   .button{
