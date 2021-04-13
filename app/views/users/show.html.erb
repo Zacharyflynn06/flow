@@ -7,14 +7,14 @@
 
     <% if @user.teacher? %>
         <h3>Years Experience: <%= @user.years_experience %> </h3>
-        <h3>Courses Taught:</h3>
+        <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
         <ul>
             <% @user.given_courses.each do |course| %>
            
                 <li><%= link_to course.name, user_course_path(@user.id, course.id) %></li>
-                <li><%= course.day%></li>
-                <li><%= course.time %></li>
-                <li><%= course.price %></li>
+                <li>Day: <%= course.day%></li>
+                <li>Time: <%= course.time %></li>
+                <li>Price: <%= course.price %></li>
        
             <% end %>
         </ul>

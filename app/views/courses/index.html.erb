@@ -1,11 +1,23 @@
-<h1 class="heading">All the Courses</h1>
+<div>
+
+    <% if params[:user_id] %>
+       <h1 class="heading"> <%= @user.full_name %>'s Courses</h1>
+    <% else %>
+        <h1 class="heading">All the Courses</h1>
+    <% end %>
+
+</div>
 
 <div class="wrapper">
 
     <% @courses.each do |course| %>
 
         <div>
-            <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
+            <% if params[:user_id] %>
+                <h3><%= link_to course.name, user_course_path(@user.id, course.id) %></h3>
+            <% else %>
+                <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
+            <% end %>
             <p><%= course.description %></p>    
 
         </div>
