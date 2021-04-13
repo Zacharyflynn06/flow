@@ -1,18 +1,17 @@
-<%= form_for @user do |f| %>
+<div class="wrapper">
+    <%= form_for @user do |f| %>
+    <ul class="signup">
+        Username: <%= f.text_field :username %>
+        Email: <%= f.email_field :email %>
+        First Name: <%= f.text_field :first_name %>
+        Last_name: <%= f.text_field :last_name %>
+        Years Experience: <%= f.number_field :years_experience %>
+        Bio: <%= f.text_area :bio %>
+        Password: <%= f.password_field :password %>
+    </ul>
 
-    Username: <%= f.text_field :username %>
-    <br>
-    Email: <%= f.text_field :email %>
-    <br>
-    First Name: <%= f.text_field :first_name %>
-    <br>
-    Last_name: <%= f.text_field :last_name %>
-    <br>
-    Years Experience: <%= f.number_field :years_experience %>
-    <br>
-    Bio: <%= f.text_area :bio %>
-    <br>
-    <%= f.submit %>
+        <%= f.submit %>
 
-    
-<% end %>
+    <% end %>
+</div>
+

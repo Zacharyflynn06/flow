@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
 
     before_action :find_user, only: [:show, :edit, :update]
-    # before_action :logged_in?
-
-
+    # before_action :redirect_if_not_logged_in
 
     def new
         @user = User.new
@@ -11,12 +9,12 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-            if @user.valid?
-                @user.save
-                redirect_to user_path(@user)
-            else
-                render :new
-            end
+        if @user.valid?
+            @user.save
+            redirect_to user_path(@user)
+        else
+            render :new
+        end
     end
     
     def index 
@@ -24,7 +22,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        byebug
+
     end
 
     def edit

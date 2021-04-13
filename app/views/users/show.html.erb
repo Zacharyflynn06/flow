@@ -1,16 +1,19 @@
 
-<h1 class="heading"><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h1>
+<h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
 
-<p><%= @user.bio %></p>
 
-<% if @user.teacher? %>
-    <h3>Years Experience: <%= @user.years_experience %> </h3>
-    <ul>
-        <% @user.given_klasses.each do |k| %>
-            <li><% k.name %></li>
-            <li><% k.date %></li>
-            <li><% k.time %></li>
-            <li><% k.price %></li>
-        <% end %>
-    </ul>
-<% end %>
+<div class="wrapper">
+    <p><%= @user.bio %></p>
+
+    <% if @user.teacher? %>
+        <h3>Years Experience: <%= @user.years_experience %> </h3>
+        <ul>
+            <% @user.given_courses.each do |k| %>
+                <li><% k.name %></li>
+                <li><% k.day%></li>
+                <li><% k.time %></li>
+                <li><% k.price %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>

@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
 
     before_action :find_course, only: [:show, :edit, :update]
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
 
     def new
         @course = Course.new
