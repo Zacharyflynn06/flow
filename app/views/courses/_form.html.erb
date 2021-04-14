@@ -3,15 +3,15 @@
     Description: <%= f.text_field :description %>
     <br>
 
-    Level: <%= f.select :level, options_for_select([1, 2, 3])%>
+    Level: <%= f.select :level, options_for_select([1, 2, 3]), prompt: true %>
     <br>
-    Price: <%= f.number_field :price %>
+    Price: $<%= f.number_field :price %>
     <br>
-    Day of Week: <%= f.select :day, options_for_select(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]) %>
+    Day of Week: <%= f.select :day, options_for_select(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]), :prompt => "Choose a Day"  %>
     <br>
     Time: <%= f.time_field :time %>
     <br>
-    Duration: <%= f.select :duration, options_for_select([30, 60, 90]) %> minutes
+    Duration: <%= f.select :duration, options_for_select([30, 60, 90]), prompt: true  %> minutes
     <br>
  
   

@@ -7,6 +7,9 @@
     <%= form_for @course, url: course_path(@course) do |f| %>
     
     <%= render partial: 'form', locals: {f: f} %>
+
+    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: true) %>
+    <br>  
     <%= f.submit %>
     
     <% end %>

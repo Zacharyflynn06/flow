@@ -9,7 +9,7 @@
   <% if params[:user_id] %>
     <%= f.hidden_field :teacher_id %>
   <%else%>
-    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: true) %>
+    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: "Select a Teacher") %>
     <br>  
   <% end %>
 
