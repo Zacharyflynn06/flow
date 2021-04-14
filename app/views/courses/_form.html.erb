@@ -2,8 +2,7 @@
     <br>
     Description: <%= f.text_field :description %>
     <br>
-    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: true) %>
-    <br>
+
     Level: <%= f.select :level, options_for_select([1, 2, 3])%>
     <br>
     Price: <%= f.number_field :price %>
@@ -14,4 +13,5 @@
     <br>
     Duration: <%= f.select :duration, options_for_select([30, 60, 90]) %> minutes
     <br>
+ 
   

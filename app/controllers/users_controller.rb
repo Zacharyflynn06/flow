@@ -26,11 +26,10 @@ class UsersController < ApplicationController
     end
 
     def edit
-        redirect_if_not_admin
+        redirect_if_not_logged_in
     end
 
     def update
-        redirect_if_not_admin
         if @user.update(user_params)
             redirect_to user_path(@user)
         else

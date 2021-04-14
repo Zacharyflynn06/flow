@@ -1,5 +1,4 @@
-<div class="wrapper">
-    <%= form_for @user do |f| %>
+
     <ul class="signup">
         <li>Username: <%= f.text_field :username %></li>
         <li>Email: <%= f.email_field :email %></li>
@@ -7,13 +6,4 @@
         <li>Last_name: <%= f.text_field :last_name %></li>
         <li>Years Experience: <%= f.number_field :years_experience %></li>
         <li>Bio: <%= f.text_area :bio %></li>
-        <li>Password: <%= f.password_field :password %></li>
-        <li>Confirm: <%= f.password_field :password_confirmation %></li>
-    </ul>
-
-
-        <%= f.submit 'Sign Up', class: 'button' %>
-
-    <% end %>
-</div>
 

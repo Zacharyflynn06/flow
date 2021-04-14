@@ -29,7 +29,13 @@
 
 
 <% if session[:user_id] == params[:id].to_i %>
-  <div class="button"><%= link_to 'Edit User', edit_user_path(@user) %></div>
+  <div class="button"><%= link_to 'Edit My Page', edit_user_path(@user) %></div>
+<% end %>
+
+<% if logged_in? && current_user.admin? %>
+    <div class="button">
+        <%= link_to 'Create a new Course', new_user_course_path(@user.id) %>
+    </div>
 <% end %>
 
 

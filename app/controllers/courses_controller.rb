@@ -7,7 +7,8 @@ class CoursesController < ApplicationController
         if params[:user_id] && !User.exists?(params[:user_id])
             redirect_to users_path, alret: "User not found"
         else
-            @course = Course.new
+            @course = Course.new(teacher_id: params[:user_id])
+
         end
     end
 

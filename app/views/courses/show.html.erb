@@ -9,7 +9,7 @@
         <ul>
             <li>Duration: <%= @course.duration %> minutes </li>
             <li>Day: <%= @course.day %></li>
-            <li>Time: <%= @course.time %></li>
+            <li>Time: <%= @course.time.strftime("at %I:%M %P") %></li>
             <li>Price: <%= @course.price %></li>
 
         </ul>
