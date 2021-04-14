@@ -3,7 +3,7 @@
 
 <div class="wrapper">
     <div class="contents">
-        <h3 class="contents"><%= @course.name %> - Level <%= @course.level %> </h3>
+         <h3 ><%= @course.name %> - Level <%= @course.level %> </h3>
         <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
         <p><%= @course.description %></p>
         <ul>

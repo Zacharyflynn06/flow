@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
     end
     
     def redirect_if_not_admin
-        redirect_back(fallback_location: root_path) unless current_user.admin?
+        if !current_user.admin?
+            redirect_to root_path, alert: "not authorized"
+        end
     end
 
 

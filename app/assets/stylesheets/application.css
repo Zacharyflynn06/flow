@@ -153,8 +153,8 @@
 
   .wrapper{
     background-color: rgba(184, 183, 183, 0.897);
-    border: 3px solid white;
-    width: 50%;
+    border: 1px solid white;
+    width: 35%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

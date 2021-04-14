@@ -1,26 +1,28 @@
 
-    <h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
+<h1><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h1>
 
 
-<div class="wrapper">
-    <div class="contents">
-            <h4>About Me</h4>
-    <p><%= @user.bio %></p><br>
+    <div class="wrapper">
+        <div class="contents">
+                <h3>About Me</h3>
+        <p><%= @user.bio %></p><br>
 
-    <% if @user.teacher? %>
-        <h4>Years Experience: <%= @user.years_experience %> </h4><br>
-        <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
-        <ul>
-            <% @user.given_courses.each do |course| %>
-           
-                <li><%= link_to course.name, course_path(course.id) %></li>
-                <li>Day: <%= course.day%></li>
-                <li>Time: <%= course.time %></li>
-                <li>Price: <%= course.price %></li>
-       
-            <% end %>
-        </ul>
-    <% end %>
+        <% if @user.teacher? %>
+            <p>Years Experience: <%= @user.years_experience %> </p><br>
+    </div>
+    <div class="contents" >
+            <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
+            <ul class="contents">
+                <% @user.given_courses.each do |course| %>
+
+                    <li><%= link_to course.name, course_path(course.id) %></li>
+                    <li>Day: <%= course.day%></li>
+                    <li>Time: <%= course.time %></li>
+                    <li>Price: <%= course.price %></li>
+
+                <% end %>
+            </ul>
+        <% end %>
     </div>
 
 </div>

@@ -1,6 +1,5 @@
-
-New Course form
-    teacher must exist
+how to handle admin stuff
+cant get error to pop up on redirect_if_not_authorized
 validate
     if 30 or 60 or 90
 gems
