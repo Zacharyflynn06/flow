@@ -12,9 +12,9 @@
 
     <% @courses.each do |course| %>
 
-        <div>
+        <div class="contents">
             <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
-            <p><%= course.description %></p>    
+            <%= course.description %>  
         </div>
 
     <% end %>

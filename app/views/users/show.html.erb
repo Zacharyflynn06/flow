@@ -1,12 +1,14 @@
-<h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
+
+    <h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
 
 
 <div class="wrapper">
-    <h3>About</h3>
-    <p><%= @user.bio %></p>
+    <div class="contents">
+            <h4>About Me</h4>
+    <p><%= @user.bio %></p><br>
 
     <% if @user.teacher? %>
-        <h3>Years Experience: <%= @user.years_experience %> </h3>
+        <h4>Years Experience: <%= @user.years_experience %> </h4><br>
         <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
         <ul>
             <% @user.given_courses.each do |course| %>
@@ -19,12 +21,17 @@
             <% end %>
         </ul>
     <% end %>
+    </div>
+
 </div>
 
 
 <% if session[:user_id] == params[:id].to_i %>
   <div class="button"><%= link_to 'Edit User', edit_user_path(@user) %></div>
 <% end %>
+
+
+
    
 
 

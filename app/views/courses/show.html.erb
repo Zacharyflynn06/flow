@@ -2,16 +2,18 @@
 <h1 class="heading"><%= @course.name %></h1>
 
 <div class="wrapper">
-    <h3><%= @course.name %> - Level <%= @course.level %> </h3>
-    <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
-    <p><%= @course.description %></p>
-    <ul>
-        <li>Duration: <%= @course.duration %> minutes </li>
-        <li>Day: <%= @course.day %></li>
-        <li>Time: <%= @course.time %></li>
-        <li>Price: <%= @course.price %></li>
+    <div class="contents">
+        <h3 class="contents"><%= @course.name %> - Level <%= @course.level %> </h3>
+        <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
+        <p><%= @course.description %></p>
+        <ul>
+            <li>Duration: <%= @course.duration %> minutes </li>
+            <li>Day: <%= @course.day %></li>
+            <li>Time: <%= @course.time %></li>
+            <li>Price: <%= @course.price %></li>
 
-    </ul>
+        </ul>
+    </div>
 </div>
 
 
