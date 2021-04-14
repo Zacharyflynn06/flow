@@ -8,6 +8,9 @@
             <li>Confirm: <%= f.password_field :password_confirmation %></li>
         </ul>
         <%= f.submit 'Sign Up', class: 'button' %>
+
+        <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+
     <% end %>
 </div>
 
