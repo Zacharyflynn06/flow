@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   
   resources :users do
-    resources :courses, only: [:new, :index]
+    resources :courses, only: [:index]
   end
   
   resources :courses do
-    resources :reviews, only: [:new]
+    resources :reviews, only: [:new, :index]
   end
+
+  resources :reviews
   
   get 'auth/:provider/callback' => 'sessions#omniauth'
 end

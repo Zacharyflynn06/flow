@@ -1,5 +1,5 @@
 
-<h1><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h1>
+<h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
 
 
     <div class="wrapper">
@@ -9,20 +9,10 @@
 
         <% if @user.teacher? %>
             <p>Years Experience: <%= @user.years_experience %> </p><br>
+        <% end %>
     </div>
     <div class="contents" >
-            <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
-            <ul class="contents">
-                <% @user.given_courses.each do |course| %>
-
-                    <li><%= link_to course.name, course_path(course.id) %></li>
-                    <li>Day: <%= course.day%></li>
-                    <li>Time: <%= course.time %></li>
-                    <li>Price: <%= course.price %></li>
-
-                <% end %>
-            </ul>
-        <% end %>
+        <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
     </div>
 
 </div>
@@ -34,7 +24,7 @@
 
 <% if logged_in? && current_user.admin? %>
     <div class="button">
-        <%= link_to 'Create a new Course', new_user_course_path(@user.id) %>
+        <%= link_to 'Create a new Course', new_course_path %>
     </div>
 <% end %>
 

@@ -1,16 +1,15 @@
-<h1>Add A review</h1>
+
+<h1>Add a review for </h1>
+<h2><%= @review.course.name %></h2>
+
 
 <div class="wrapper">
-    <div class="contents">
-         <h3 ><%= @course.name %> - Level <%= @course.level %> </h3>
-        <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
-        <p><%= @course.description %></p>
-        <ul>
-            <li>Duration: <%= @course.duration %> minutes </li>
-            <li>Day: <%= @course.day %> <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
-            <li>Price: $<%= @course.price %></li>
-
-        </ul>
-    </div>
-
+  <%= form_for @review do |f| %>
+    Leave a review below: <br>
+    <%= f.text_area :content %><br />
+    Leave a rating:
+    <%= f.select :rating, options_for_select([1,2,3,4,5]), :prompt => true  %><br>
+    <% f.hidden_field :student_id %>
+    <%= f.submit %>
+  <% end %>
 </div>

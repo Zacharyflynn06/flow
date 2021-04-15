@@ -1,5 +1,5 @@
 <%= render partial: 'application/errors', locals: {object: @course} %>
-<h1 class="heading"><%= @course.name %></h1>
+<h2><%= @course.name %></h2>
 
 <div class="wrapper">
     <div class="contents">
@@ -12,7 +12,13 @@
             <li>Price: $<%= @course.price %></li>
 
         </ul>
+        <% if logged_in? && current_user.student? %>
+            <h3>Reviews: <%= link_to 'Leave a Review', path %></h3>
+        <% end %>
+    
     </div>
+
+
 
 </div>
 
