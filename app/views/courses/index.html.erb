@@ -9,15 +9,12 @@
 </div>
 
 <div class="wrapper">
-
-    <% @courses.each do |course| %>
-
-        <div class="contents">
+    <div class="contents">
+        <% @courses.each do |course| %>
             <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>
             <%= course.description %>  
-        </div>
-
-    <% end %>
+        <% end %>
+    </div>
     
     <% if logged_in? && current_user.admin? %>
         <div class="button">

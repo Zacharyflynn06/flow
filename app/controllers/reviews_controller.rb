@@ -5,11 +5,10 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        byebug
+        
         @review = Review.new(review_params)
         if @review.valid?
             @review.save
-            byebug
             redirect_to course_path(@review.course.id)
         else
             render :new
@@ -20,7 +19,7 @@ class ReviewsController < ApplicationController
         if params[:course_id]
             @course = Course.find(params[:course_id])
                 if @course.nil?
-                    redirect_to courses_path, alert: "Artist not Found"
+                    redirect_to courses_path, alert: "Course not Found"
                 else
                     @reviews = @course.reviews
                 end
@@ -29,8 +28,10 @@ class ReviewsController < ApplicationController
         
         end
     end
-    def edit
 
+
+    def edit
+        @review = Review.find(params[:id])
     end
 
     def update
