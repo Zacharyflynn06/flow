@@ -8,15 +8,15 @@
         <p><%= @course.description %></p>
         <ul>
             <li>Duration: <%= @course.duration %> minutes </li>
-            <li>Day: <%= @course.day %></li>
-            <li>Time: <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
-            <li>Price: <%= @course.price %></li>
+            <li>Day: <%= @course.day %> <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
+            <li>Price: $<%= @course.price %></li>
 
         </ul>
     </div>
+
+    <% if logged_in? && current_user.admin? %>
+        <div class="button"><%= link_to 'Edit', edit_course_path %></div>
+    <% end %>
 </div>
 
 
-<% if logged_in? && current_user.admin? %>
-    <div class="button"><%= link_to 'Edit', edit_course_path %></div>
-<% end %>

@@ -1,7 +1,5 @@
+Price - needs formating on show pages
 
-courses/id/review/new
-
-how to handle admin stuff
 
 gems
     Better Errors?
@@ -13,6 +11,11 @@ Make reviews happen
     Form on Course Show page
     course/id/reviews/new - route
     add @review to show action
+
+Make scope methods happen
+    List classes by day
+    List classes by letter
+    List classes by price
 
 should I make another through table?
     Teacher-courses
