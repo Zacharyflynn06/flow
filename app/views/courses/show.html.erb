@@ -10,17 +10,26 @@
             <li>Duration: <%= @course.duration %> minutes </li>
             <li>Day: <%= @course.day %> <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
             <li>Price: $<%= @course.price %></li>
-
         </ul>
-        <% if logged_in? && current_user.student? %>
-            <h3>Reviews: <%= link_to 'Leave a Review', path %></h3>
-        <% end %>
-    
     </div>
-
-
-
 </div>
+<div class="wrapper">
+    <h3 class="contents">Reviews:</h3>
+        <% @course.reviews.each do |review| %>
+            <%= review.student.full_name %> <br>
+            <%= review.rating %> <br>
+            <%= review.content %> <br>
+            <% if review.student = current_user %>
+              <%= link_to 'Edit my review', edit_review_path(review) %>
+            <% end %>
+        <% end %>
+</div>
+
+
+    <% if logged_in? && current_user.student? %>
+        <div class="button"><%= link_to 'Leave a Review', new_course_review_path(@course.id) %></div> 
+    <% end %>
+
 
     <% if logged_in? && current_user.admin? %>
         <div class="button"><%= link_to 'Edit', edit_course_path %></div>

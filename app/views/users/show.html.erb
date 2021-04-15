@@ -9,11 +9,10 @@
 
         <% if @user.teacher? %>
             <p>Years Experience: <%= @user.years_experience %> </p><br>
+            <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
         <% end %>
     </div>
-    <div class="contents" >
-        <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
-    </div>
+    
 
 </div>
 

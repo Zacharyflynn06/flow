@@ -1,17 +1,16 @@
 class ReviewsController < ApplicationController
 
     def new
-        @review = Review.new(course_id: params[:course_id], student_id: session[:id])
+        @review = Review.new(course_id: params[:course_id], student_id: session[:user_id])
     end
 
     def create
-        
-        @review = Review.new(review_params)
         byebug
+        @review = Review.new(review_params)
         if @review.valid?
-            byebug
             @review.save
-            redirect_to course_path(@review.course)
+            byebug
+            redirect_to course_path(@review.course.id)
         else
             render :new
         end
@@ -43,6 +42,6 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:content, :course_id, :level, :price, :duration, :day, :time, :teacher_id)
+        params.require(:review).permit(:content, :rating, :student_id, :course_id)
     end
 end
