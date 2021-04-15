@@ -1,5 +1,4 @@
-<%= render partial: 'application/errors', locals: {object: @course} %>
-<h1 class="heading"><%= @course.name %></h1>
+<h1>Add A review</h1>
 
 <div class="wrapper">
     <div class="contents">
@@ -15,8 +14,3 @@
     </div>
 
 </div>
-
-    <% if logged_in? && current_user.admin? %>
-        <div class="button"><%= link_to 'Edit', edit_course_path %></div>
-    <% end %>
-

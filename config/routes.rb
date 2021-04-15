@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :courses, only: [:new, :index]
   end
   
-  resources :courses
+  resources :courses do
+    resources :reviews, only: [:new]
+  end
   
   get 'auth/:provider/callback' => 'sessions#omniauth'
 end
