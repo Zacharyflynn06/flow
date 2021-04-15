@@ -1,18 +1,19 @@
+
+courses/id/review/new
+
 how to handle admin stuff
-cant get error to pop up on redirect_if_not_authorized
-validate
-    if 30 or 60 or 90
+
 gems
     Better Errors?
 
     Active Storage
 
 
-general_Notes
-    Anyone should be able to see all classes
+Make reviews happen
+    Form on Course Show page
+    course/id/reviews/new - route
+    add @review to show action
 
-    only community members can make reviews
-
-    only admin can make classes
-
-    CSS reset file
+should I make another through table?
+    Teacher-courses
+        abstract Time into through table

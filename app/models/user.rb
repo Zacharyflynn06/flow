@@ -14,14 +14,23 @@ class User < ApplicationRecord
     has_many :reviews, through: :given_courses
 
     enum role: [:student, :teacher, :admin]
-
-    has_secure_password
+    
     validates :username, uniqueness: true
     validates :bio, presence: true, if: lambda { self.role.to_s == 'teacher' }
     validates :years_experience, presence: true, if: lambda { self.role.to_s == 'teacher' }
+    
+    has_secure_password
 
-    # validates :first_name, presence: true
-    # validates :last_name, presence: true
+    def self.from_omniauth(response)
+        byebug
+        User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
+            u.first_name = response[:info][:first_name]
+            u.last_name = response[:info][:last_name]
+            u.username = response[:info][:name]
+            u.email = response[:info][:email]
+            u.password = SecureRandom.hex(15)
+        end
+    end
 
     def full_name
         self.first_name.capitalize + " " + self.last_name.capitalize

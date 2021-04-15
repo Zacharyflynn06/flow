@@ -6,10 +6,16 @@ class Course < ApplicationRecord
   belongs_to :teacher, class_name: "User"
   has_many :students, through: :reviews, class_name: "User"
 
-  validates :name, presence: true
-  validates :day, presence: true, inclusion: %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
-  validates :time, presence: true
-  # validates :duration, presence: true, inclusion: %w("30" "60" "90")
-  validates :price, presence: true
+  # validates :name, presence: true
+  # validates :day, presence: true, inclusion: %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+  # validates :time, presence: true
+  validate :check_duration
+  # validates :price, presence: true, numericality: { greater_than: 0}, :format => { :with => /^\d{1,6}(\.\d{0,2})?$/ }
 
+
+  def check_duration
+    if ![30, 60, 90].include?(self.duration)
+      self.errors.add(:duration, "Has to be 30 60 90")
+    end
+  end
 end

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_222953) do
     t.text "bio"
     t.integer "role"
     t.string "password_digest"
-    t.integer "uid"
+    t.string "uid"
     t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
