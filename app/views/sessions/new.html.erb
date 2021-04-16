@@ -1,20 +1,19 @@
 <div class='errors'>
     <%= @errors %>
 </div>
-
-<h1 class="heading">Log In</h1>
-
 <div class="wrapper">
+<h1>Log In</h1>
+
+
     <%= form_tag '/login' do %>
        <br>
-       <%= label_tag :username %>
+       <%= label_tag :username %>:
        <%= text_field_tag :username %>
        <br>
        <%= label_tag :password%>
-       <%= password_field_tag :password%>
+       <%= password_field_tag :password %>
        <br>
-       <%= submit_tag "Login"%>
-
+       <%= submit_tag "Login", class: "button"%>
     <%end%>
-    <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+    <%= button_to "Log in with Google", '/auth/google_oauth2', class: "button" %>
 </div>

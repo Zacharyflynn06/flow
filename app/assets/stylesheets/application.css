@@ -57,26 +57,26 @@
   
   /* Body */
 
-  h1{
-    display: flex;
-    justify-content: center;
+  a {
+    margin: 0;
+  }
 
+  h1{
     font-size: 5em;
     margin: .5em;
-    color: #314e52;
+    color: white;
   }
   
   h2 {
-    color: #314e52;
+    color: white;
     font-size: 3em;
     font-style: bold;
-   
-
+    margin: 0;
   }
 
   h3 {
-    color: #white;
-    font-size: 1em;
+    color: white;
+    font-size: 1.5em;
     font-weight: bold;
   }
 
@@ -84,11 +84,6 @@
     margin: 0;
   }
 
-  /* p {
-    border: 1px solid white;
-    padding: 1em;
-
-  } */
 
   a:link, a:visited{
     color: white;
@@ -120,6 +115,10 @@
     text-decoration: none;
     color: black;
   }
+
+  .button:hover {
+    color: #f2a154;
+  }
   
 
   input{
@@ -144,9 +143,9 @@
     padding: 2em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 12.5%;
-
+    margin-top: 10%;
     width: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
   }
   
   .site-title{
@@ -156,16 +155,18 @@
   }
 
   .wrapper{
-    background-color: rgba(184, 183, 183, 0.897);
+    background-color: rgba(0, 0, 0, 0.35);
     border: 1px solid white;
-    width: 50%;
+    width:  50em;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin:auto;
-    margin-bottom: 2em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%
   }
   
   .contents{
@@ -181,11 +182,12 @@
     text-align: center;
     display: inline-block;
     font-size: 1.25em;
-    margin-bottom: 2em;
+    
   }
 
-  ul{
-    list-style-type: none;
+
+  li{
+    flex-flow: column wrap;
   }
 
 

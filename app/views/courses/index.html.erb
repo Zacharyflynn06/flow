@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div>
 
     <% if params[:user_id] %>
@@ -8,7 +9,6 @@
 
 </div>
 
-<div class="wrapper">
     <div class="contents">
         <% @courses.each do |course| %>
             <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>

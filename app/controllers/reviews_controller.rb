@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+    before_action :find_review, only: [:edit, :update]
+    before_action :redirect_if_not_logged_in
     def new
         @review = Review.new(course_id: params[:course_id], student_id: session[:user_id])
     end
@@ -15,31 +16,34 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def index 
-        if params[:course_id]
-            @course = Course.find(params[:course_id])
-                if @course.nil?
-                    redirect_to courses_path, alert: "Course not Found"
-                else
-                    @reviews = @course.reviews
-                end
-        else
-        @reviews = @course.reviews
+    # def index 
+    #     if params[:course_id]
+    #         @course = Course.find(params[:course_id])
+    #             if @course.nil?
+    #                 redirect_to courses_path, alert: "Course not Found"
+    #             else
+    #                 @reviews = @course.reviews
+    #             end
+    #     else
+    #     @reviews = @course.reviews
         
-        end
-    end
+    #     end
+    # end
 
 
     def edit
-        @review = Review.find(params[:id])
     end
-
+    
     def update
-
+        
     end
-
+    
     def destroy
         
+    end
+    private
+    def find_review
+        @review = Review.find(params[:id])
     end
 
     def review_params

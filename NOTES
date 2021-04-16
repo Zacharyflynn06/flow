@@ -1,16 +1,7 @@
-Price - needs formating on show pages
-
-
 gems
     Better Errors?
 
     Active Storage
-
-
-Make reviews happen
-    Form on Course Show page
-    course/id/reviews/new - route
-    add @review to show action
 
 Make scope methods happen
     List classes by day

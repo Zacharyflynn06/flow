@@ -1,6 +1,6 @@
-<h1>Edit my review</h1>
-<h2>for <%= @review.course.name %></h2>
 <div class="wrapper">
+<h1>Edit My review</h1>
+<h2>for <%= @review.course.name %></h2>
   <%= form_for @review do |f| %>
     <%= render partial: 'form', locals: {f: f} %>
     <%= f.submit %>

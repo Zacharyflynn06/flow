@@ -1,14 +1,14 @@
 <%= render partial: 'application/errors', locals: {object: @course} %>
-<h2><%= @course.name %></h2>
 
 <div class="wrapper">
+
     <div class="contents">
          <h3 ><%= @course.name %> - Level <%= @course.level %> </h3>
         <p><%= @course.description %></p>
         <ul>
             <li><%= @course.day %>s <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
-            <li>Duration: <%= @course.duration %> minutes </li>
-            <li>Price: $<%= @course.price %></li>
+            <li><%= @course.duration %> minutes </li>
+            <li><%= number_to_currency(@course.price) %> </li>
         </ul>
         <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
     </div>
@@ -21,7 +21,7 @@
                 <%= review.student.full_name %> <br>
                 <%= review.rating %> <br>
                 <%= review.content %> <br>
-                <% if review.student = current_user %>
+                <% if logged_in? && review.student = current_user %>
                 <%= link_to 'Edit my review', edit_review_path(review), id: review.id %>
                 <% end %>
             <% end %>
