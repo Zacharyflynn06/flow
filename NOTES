@@ -1,5 +1,4 @@
 gems
-    Better Errors?
 
     Active Storage
 
@@ -11,3 +10,5 @@ Make scope methods happen
 should I make another through table?
     Teacher-courses
         abstract Time into through table
+
+Sign up form should be two collumns

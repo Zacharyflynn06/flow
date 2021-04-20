@@ -23,8 +23,11 @@ class CoursesController < ApplicationController
         end
     end
     
-    def index 
-        if params[:user_id]
+    def index
+
+        if params["filter"]
+            @courses = Course.filter_by_level(params[:filter])
+        elsif params[:user_id]
             @user = User.find(params[:user_id])
             if @user.nil?
                 redirect_to users_path, alert: "Teacher not found"

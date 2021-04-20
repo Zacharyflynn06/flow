@@ -9,6 +9,14 @@
 
 </div>
 
+    <div>
+        <%= form_with(url: courses_path, method: :get) do |f| %>
+            <%= f.label :filter, "Filter courses by level"  %>
+            <%= f.select :filter, options_for_select(["All", 1, 2, 3]), prompt: false %>
+            <%= f.submit "Search" %>
+        <% end  %>
+    </div>
+
     <div class="contents">
         <% @courses.each do |course| %>
             <h3><%= link_to course.name, course_path(course) %> - Level <%= course.level %> </h3>

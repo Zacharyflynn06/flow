@@ -1,9 +1,14 @@
 
     <ul class="signup">
-        <li>Username: <%= f.text_field :username %></li>
-        <li>Email: <%= f.email_field :email %></li>
-        <li>First Name: <%= f.text_field :first_name %></li>
-        <li>Last_name: <%= f.text_field :last_name %></li>
-        <li>Years Experience: <%= f.number_field :years_experience %></li>
-        <li>Bio: <%= f.text_area :bio %></li>
-
+        <li><%= f.label :username %></li>
+        <li><%= f.text_field :username %></li>
+        <li><%= f.label :email %></li>
+        <li><%= f.email_field :email %></li>
+        <li><%= f.label :first_name %></li>
+        <li><%= f.text_field :first_name %></li>
+        <li><%= f.label :last_name %></li>
+        <li><%= f.text_field :last_name %></li>
+        <li><%= f.label :years_experience %></li>
+        <li><%= f.number_field :years_experience %></li>
+        <li><%= f.label :bio %></li>
+        <li><%= f.text_area :bio %></li>
