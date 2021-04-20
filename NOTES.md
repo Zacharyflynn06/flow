@@ -8,3 +8,5 @@ should I make another through table?
 Sign up form should be two collumns
 
 Add a Footer
+
+Course partial needed?
