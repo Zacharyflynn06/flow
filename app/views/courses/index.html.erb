@@ -1,21 +1,15 @@
 <div class="wrapper">
-<div>
-
-    <% if params[:user_id] %>
-       <h1 class="heading"> <%= @user.full_name %>'s Courses</h1>
-    <% else %>
-        <h1 class="heading">All the Courses</h1>
-    <% end %>
-
-</div>
-
     <div>
-        <%= form_with(url: courses_path, method: :get) do |f| %>
-            <%= f.label :filter, "Filter courses by level"  %>
-            <%= f.select :filter, options_for_select(["All", 1, 2, 3]), prompt: false %>
-            <%= f.submit "Search" %>
-        <% end  %>
+
+        <% if params[:user_id] %>
+           <h1 class="heading"> <%= @user.full_name %>'s Courses</h1>
+        <% else %>
+            <h1 class="heading">All the Courses</h1>
+        <% end %>
+
     </div>
+
+    <%= render partial: 'filter' %>
 
     <div class="contents">
         <% @courses.each do |course| %>

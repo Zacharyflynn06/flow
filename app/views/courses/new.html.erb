@@ -1,18 +1,17 @@
 <%= render partial: 'application/errors', locals: {object: @course} %>
 <h1 class="heading">New Course</h1>
+  <div class="wrapper">
+    <%= form_for @course, url: courses_path(@course) do |f| %>
 
-<div class="wrapper">
-  <%= form_for @course, url: courses_path(@course) do |f| %>
+    <%= render partial: 'form', locals: {f: f} %>
 
-  <%= render partial: 'form', locals: {f: f} %>
+    <% if params[:user_id] %>
+      <%= f.hidden_field :teacher_id %>
+    <%else%>
+      Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: "Select a Teacher ") %>
+      <br>  
+    <% end %>
 
-  <% if params[:user_id] %>
-    <%= f.hidden_field :teacher_id %>
-  <%else%>
-    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: "Select a Teacher ") %>
-    <br>  
+    <%= f.submit "Create Course" %>
   <% end %>
-
-  <%= f.submit "Create Course" %>
-<% end %>
 </div>
