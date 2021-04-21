@@ -10,3 +10,5 @@ Sign up form should be two collumns
 Add a Footer
 
 Course partial needed?
+
+Merge Branches
