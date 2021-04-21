@@ -1,13 +1,1 @@
-<% if !course.reviews.empty? %>
-    <div class="wrapper">
-        <h3 class="contents">Reviews:</h3>
-            <% @course.reviews.each do |review| %>
-                <%= review.student.full_name %> <br>
-                <%= review.rating %> <br>
-                <%= review.content %> <br>
-                <% if logged_in? && review.student = current_user %>
-                <%= link_to 'Edit my review', edit_review_path(review), id: review.id %>
-                <% end %>
-            <% end %>
-    </div>
-<% end %>
+<%= conditionally_display_reviews(@course) %>

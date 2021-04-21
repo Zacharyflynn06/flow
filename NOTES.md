@@ -12,3 +12,6 @@ Add a Footer
 Course partial needed?
 
 Merge Branches
+
+
+Issues with reviews rendering from helper

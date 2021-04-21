@@ -16,13 +16,7 @@
 
 <%= render partial: 'review', locals: {course: @course} %>
 
+<%= present_review_button_if_logged_in @course %>
 
-    <% if logged_in? && current_user.student? %>
-        <div class="button"><%= link_to 'Leave a Review', new_course_review_path(@course.id) %></div> 
-    <% end %>
-
-
-    <% if logged_in? && current_user.admin? %>
-        <div class="button"><%= link_to 'Edit', edit_course_path %></div>
-    <% end %>
+<%= present_edit_course_button_if_if_admin %>
 
