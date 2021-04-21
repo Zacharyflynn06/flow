@@ -12,6 +12,7 @@
         </ul>
         <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
     </div>
+    
 </div>
 
 <%= render partial: 'review', locals: {course: @course} %>

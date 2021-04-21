@@ -1,9 +1,7 @@
 <%= render partial: 'application/errors', locals: {object: @review} %>
-<h1>Add a review for</h1>
-<h2><%= @review.course.name %></h2>
+
 <div class="wrapper">
- <%= form_for @review do |f| %>
-    <%= render partial: 'form', locals: {f: f} %>
-        <%= f.submit %>
-  <% end %>
+  <h1>Add a review for</h1>
+  <h2><%= @review.course.name %></h2>
+  <%= render partial: 'form', locals: {review: @review} %>
 </div>

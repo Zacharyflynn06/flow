@@ -1,7 +1,9 @@
-
+<%= form_for @review do |f| %>
     Leave a review below: <br>
     <%= f.text_area :content %><br />
     Leave a rating:
     <%= f.select :rating, options_for_select([1,2,3,4,5]), :prompt => true  %><br>
     <%= f.hidden_field(:student_id) %>
     <%= f.hidden_field(:course_id) %>
+    <%= f.submit %>
+<% end %>
