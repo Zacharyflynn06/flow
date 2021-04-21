@@ -1,7 +1,6 @@
 <%= render partial: 'application/errors', locals: {object: @review} %>
 
 <div class="wrapper">
-  <h1>Add a review for</h1>
   <h2><%= @review.course.name %></h2>
   <%= render partial: 'form', locals: {review: @review} %>
 </div>
