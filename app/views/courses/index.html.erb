@@ -1,22 +1,11 @@
 <div class="wrapper">
-    <div>
-        <% if params[:user_id] %>
-           <h1 class="heading"> <%= @user.full_name %>'s Courses</h1>
-        <% else %>
-            <h1 class="heading">All the Courses</h1>
-        <% end %>
-    </div>
+    <%= conditionally_display_heading(@user) %>
 
     <%= render partial: 'filter' %>
 
     <%= render partial: 'course', collection: @courses %>
     
-    <% if logged_in? && current_user.admin? %>
-        <div class="button">
-            <%= link_to 'Create a new Course', new_course_path %>
-        </div>
-    <% end %>
-
+    <%= create_new_course_if_admin %>
 </div>
 
 
