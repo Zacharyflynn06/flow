@@ -12,7 +12,7 @@ module CoursesHelper
     def conditionally_display_heading(user)
         if params[:user_id]
             tag.h1 " Here are #{user.full_name}'s Courses" 
-    
+        else
             tag.h1 'Here are our courses'
         end
     end
@@ -56,6 +56,16 @@ module CoursesHelper
                         link_to 'Edit my review', edit_review_path(review), id: review.id
                     end
                 end
+            end
+        end
+    end
+
+    def display_course_filter
+        tag.div do
+            form_with(url: courses_path, method: :get) do |f|
+                f.label :filter, "Filter courses by level"
+                f.select :filter, options_for_select(["All", 1, 2, 3]), prompt: false
+                f.submit "Search"
             end
         end
     end
