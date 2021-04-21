@@ -16,7 +16,7 @@
 
 </div>
 
- <%= logged_in conditinal @user %>
+ <%# <%= logged_in_conditinal @user %> %>
 
 <% if session[:user_id] == params[:id].to_i %>
   <div class="button"><%= link_to 'Edit My Page', edit_user_path(@user) %></div>

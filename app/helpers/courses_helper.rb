@@ -3,7 +3,7 @@ module CoursesHelper
 
     def conditionally_display_heading(user)
         if params[:user_id]
-            tag.h1 user.full_name
+            tag.h1 " Here are #{user.full_name}'s Courses" 
         else
             tag.h1 'Here are our courses'
         end
