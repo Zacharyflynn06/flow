@@ -1,3 +1,4 @@
+<%= form_for course, url: courses_path(course) do |f| %>
     Name: <%= f.text_field :name %>
     <br>
     Description: <%= f.text_field :description %>
@@ -12,5 +13,7 @@
     <br>
     Duration: <%= f.select :duration, options_for_select([30, 60, 90]), prompt: true  %> minutes
     <br>
- 
-  
+    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: "Select a Teacher ") %>
+    <br>  
+    <%= f.submit %>
+<% end %>

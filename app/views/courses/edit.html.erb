@@ -1,19 +1,8 @@
 <%= render partial: 'application/errors', locals: {object: @course} %>
 
-<h1 class="heading">Edit a Course</h1>
-
 <div class="wrapper">
-
-    <%= form_for @course, url: course_path(@course) do |f| %>
-    
-    <%= render partial: 'form', locals: {f: f} %>
-
-    Teacher: <%= f.collection_select(:teacher_id, User.teacher, :id, :full_name, prompt: true) %>
-    <br>  
-    <%= f.submit %>
-    
-    <% end %>
-
+    <h1>Edit a Course</h1>
+    <%= render partial: 'form', locals: {course: @course} %>
 </div>
 
 
