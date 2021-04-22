@@ -1,32 +1,14 @@
 <div class="wrapper">
 
 <h1><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h1>
-
-
-        <div class="contents">
-                <h3>About Me</h3>
+    <div class="contents">
+        <h3>About Me</h3>
         <p><%= @user.bio %></p><br>
-
-        <% if @user.teacher? %>
-            <p>Years Experience: <%= @user.years_experience %> </p><br>
-            <h3><%= link_to 'Courses I Teach', user_courses_path(@user.id) %></h3>
-        <% end %>
+        <%= conditionally_present_teachers_courses @user %>
     </div>
-    
-
 </div>
 
- <%# <%= logged_in_conditinal @user %> %>
-
-<% if session[:user_id] == params[:id].to_i %>
-  <div class="button"><%= link_to 'Edit My Page', edit_user_path(@user) %></div>
-<% end %>
-
-<% if logged_in? && current_user.admin? %>
-    <div class="button">
-        <%= link_to 'Create a new Course', new_course_path %>
-    </div>
-<% end %>
+ <%= present_edit_button_if_logged_in @user %>
 
 
 

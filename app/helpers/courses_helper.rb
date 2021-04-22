@@ -25,7 +25,7 @@ module CoursesHelper
         end
     end
 
-    def present_edit_course_button_if_if_admin
+    def present_edit_course_button_if_admin
         if logged_in? && current_user.admin?
             tag.div class: "button" do
                 link_to 'Edit Course', edit_course_path
