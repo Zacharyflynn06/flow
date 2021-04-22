@@ -23,4 +23,8 @@ class Course < ApplicationRecord
     end  
   end  
 
+  def standard_time
+    self.time.try(:strftime, "at %I:%M %P") || "Time has not been set"
+  end
+
 end

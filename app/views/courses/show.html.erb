@@ -3,9 +3,9 @@
 <div class="wrapper">
 
     <div class="contents">
-        <%= render partial: 'course', locals {course: @course} %>
+        <%= render partial: 'course', locals: {course: @course} %>
         <ul>
-            <li><%= @course.day %>s <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
+            <li><%= @course.day %>s <%= @course.standard_time %>
             <li><%= @course.duration %> minutes </li>
             <li><%= number_to_currency(@course.price) %> </li>
         </ul>
