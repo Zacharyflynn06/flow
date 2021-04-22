@@ -3,8 +3,7 @@
 <div class="wrapper">
 
     <div class="contents">
-         <h3 ><%= @course.name %> - Level <%= @course.level %> </h3>
-        <p><%= @course.description %></p>
+        <%= render partial: 'course', locals {course: @course} %>
         <ul>
             <li><%= @course.day %>s <%= @course.time.try(:strftime, "at %I:%M %P") || "Time hasnt been set up" %></li>
             <li><%= @course.duration %> minutes </li>
@@ -19,5 +18,5 @@
 
 <%= present_review_button_if_logged_in @course %>
 
-<%= present_edit_course_button_if_if_admin %>
+<%= present_edit_course_button_if_admin %>
 

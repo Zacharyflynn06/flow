@@ -1,10 +1,11 @@
 module UsersHelper
     def conditionally_present_teachers_courses(user)
         if user.teacher?
-            tag.h4 "Years Teaching: #{user.years_experience}"
-            tag.h3 do 
-                link_to "Courses I Teach", user_courses_path(user.id)
-            end
+            tag.div do
+                concat tag.h4 "Years Teaching: #{user.years_experience}"
+                concat tag.h3 link_to "Courses I Teach", user_courses_path(user.id)
+            end.html_safe
+
         end
     end
 

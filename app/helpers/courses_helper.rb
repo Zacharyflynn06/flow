@@ -44,17 +44,17 @@ module CoursesHelper
     def conditionally_display_reviews(course)
         if !course.reviews.empty?
             tag.div class: "wrapper" do
-                tag.h3 "Reviews"
+                concat tag.h3 "Reviews"
     
-                course.reviews.each do |review|
-                    tag.ul do
-                        tag.li review.student.full_name
-                        tag.li review.rating
-                        tag.li review.content
-                    end
-                    if logged_in? && review.student = current_user
-                        link_to 'Edit my review', edit_review_path(review), id: review.id
-                    end
+                concat tag.ul do
+                    concat course.reviews.collect do |review|
+                        concat tag.li review.student.full_name
+                        concat tag.li review.rating
+                        concat tag.li review.content
+                        # if logged_in? && review.student = current_user
+                        #     concat link_to 'Edit my review', edit_review_path(review), id: review.id
+                        # end
+                    end.join.html_safe
                 end
             end
         end

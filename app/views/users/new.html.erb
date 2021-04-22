@@ -5,11 +5,11 @@
         <%= form_for @user do |f| %>
             <%= render partial: 'signup_form', locals: {f: f} %>
     
-                <li><%= f.label :password %></li>
-                <li><%= f.password_field :password %></li>
-                <li><%= f.label :confirm %></li>
-                <li><%= f.password_field :password_confirmation %></li>
-            </ul>
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+                <%= f.label :confirm %>
+                <%= f.password_field :password_confirmation %>
+            </div>
             <%= f.submit 'Sign Up', class: 'button' %>
     
         <% end %>
