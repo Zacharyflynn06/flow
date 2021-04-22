@@ -26,7 +26,11 @@ class CoursesController < ApplicationController
     def index
 
         if params["filter"]
-            @courses = Course.filter_by_level(params[:filter])
+            if params["filter"] == "All"
+                @courses = Course.all
+            else
+                @courses = Course.filter_by_level(params[:filter])
+            end
         elsif params[:user_id]
             @user = User.find(params[:user_id])
             if @user.nil?
