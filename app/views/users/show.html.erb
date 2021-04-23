@@ -1,15 +1,21 @@
 <div class="wrapper">
 
 <h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
-    <div class="contents">
-        <%= image_tag @user.avatar, class:"profile-pic" %>
+    <div>
+        <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class:"profile-pic" %>
+        <% else %>
+            <p>(Image not yet set up)</p>
+        <% end %>
+        
+
         <h3>About Me</h3>
         <p><%= @user.bio %></p><br>
         <%= conditionally_present_teachers_courses @user %>
+        <%= present_edit_button_if_logged_in @user %>
     </div>
 </div>
 
- <%= present_edit_button_if_logged_in @user %>
 
 
 

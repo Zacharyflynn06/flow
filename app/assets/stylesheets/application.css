@@ -170,8 +170,11 @@
   }
   
   .contents{
-    /* display: flex;
-    flex-flow: column wrap; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .button{
@@ -190,10 +193,16 @@
   }
 
   .profile-pic{
-    border: 1px solid white;
+    border: 2px solid white;
     width: 25em;
     border-radius: 50%;
   }
+
+  .signup{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    }
 
 
 /* Errors */
