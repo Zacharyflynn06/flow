@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   
   resources :courses do
-    resources :reviews, only: [:new, :index]
+    resources :reviews, only: [:new]
   end
 
   resources :reviews

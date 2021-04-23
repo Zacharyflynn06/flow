@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
-        redirect_to controller: 'sessions', action: 'new' unless logged_in?
+        redirect_to root_path, alert: "You are not authorized to complete this action"
     end
 
     def current_user

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :update]
-    before_action :redirect_if_not_logged_in, only: [:edit, :update]
+    before_action :redirect_if_not_logged_in, only: [:edit, :update, :destroy]
     before_action :redirect_if_not_authorized, only: [:edit, :update, :destroy]
+    before_action :find_user, only: [:show, :edit, :update]
 
     def new
         @user = User.new

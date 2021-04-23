@@ -1,10 +1,10 @@
 <% if object.errors.any? %>
     <div class="errors">
-        <h4>There was a problem!</h4>
-        <ul>
-            <% object.errors.full_messages.each do |m| %>
-                <li class="errors"><%= m %></li>
-            <% end %>
-        </ul>
+            <ul>
+                <li>There was a problem:</li>
+                <% object.errors.full_messages.each do |m| %>
+                    <li><%= m %></li>
+                <% end %>
+            </ul>
     </div>
 <% end %>

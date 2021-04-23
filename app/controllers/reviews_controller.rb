@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
-    before_action :find_review, only: [:edit, :update]
+    before_action :find_review, only: [:edit, :update, :destroy]
     before_action :redirect_if_not_logged_in
+
     def new
         @review = Review.new(course_id: params[:course_id], student_id: session[:user_id])
     end
@@ -44,7 +45,8 @@ class ReviewsController < ApplicationController
     end
     
     def destroy
-        
+        @review.destroy
+        redirect_to course_path(@review.course)
     end
     private
 

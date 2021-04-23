@@ -1,7 +1,9 @@
 class CoursesController < ApplicationController
 
-    before_action :find_course, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
     before_action :redirect_if_not_admin, only: [:new, :create, :edit, :update, :destroy]
+    before_action :find_course, only: [:show, :edit, :update, :destroy]
+
 
     def new
         if params[:user_id] && !User.exists?(params[:user_id])

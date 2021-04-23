@@ -6,4 +6,5 @@
     <%= f.hidden_field (:student_id) %>
     <%= f.hidden_field(:course_id) %>
     <%= f.submit %>
+    <%= conditionally_present_delete_review_button review %>
 <% end %>

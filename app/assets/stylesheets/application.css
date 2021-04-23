@@ -86,7 +86,7 @@
 
   hr{
     color: white;
-    width: 95%;
+    width: 30%;
   }
 
   a:link, a:visited{
@@ -178,7 +178,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 2em;
+    /* margin: 1em; */
   }
 
   .button{
@@ -189,6 +189,7 @@
     text-align: center;
     display: inline-block;
     font-size: 1.25em;
+    margin: 1em
   }
 
 
@@ -214,13 +215,15 @@
 
 /* Errors */
   .errors{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     background-color: #f2a154;
     
-    text-align: center;
     margin: 0;
   }
-
+  
   li.errors{
     list-style-type: none;
   }
