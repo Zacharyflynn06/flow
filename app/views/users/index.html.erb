@@ -1,24 +1,10 @@
 <div class="wrapper">
-<h1>Community</h1>
-
+    <h1>Community</h1>
     <div class="contents">
-        <h2>Meet our Teachers</h2>
-
-        <% @users.admin.each do |user| %>
-            <%= render partial: 'user', locals: {user: user}%>
-            Years Teaching: <%= user.years_experience %>
-        <% end %>
-
-        <% @users.teacher.each do |user| %>
-            <%= render partial: 'user', locals: {user: user}%>
-            Years Teaching: <%= user.years_experience %>
-        <% end %>
-
-
+        <h2>Meet our Teachers</h2>   
+        <%= render partial: 'user', collection: @users.admin %>
+        <%= render partial: 'user', collection: @users.teacher %>
         <h2>Meet our Students</h2>
-            <% @users.student.each do |user| %>
-            <%= render partial: 'user', locals: {user: user} %>
-        <% end %>
-
+        <%= render partial: 'user', collection: @users.student %>
     </div>
 </div>
