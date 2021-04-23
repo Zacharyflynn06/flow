@@ -45,7 +45,11 @@ class UsersController < ApplicationController
     private
 
     def find_user
-        @user = User.find(params[:id])
+        if @user = User.find_by(id: params[:id])
+            @user
+        else
+            redirect_to users_path, alert: "User doesn't exist!"
+        end
     end
 
     def user_params

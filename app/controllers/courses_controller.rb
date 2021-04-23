@@ -65,8 +65,7 @@ class CoursesController < ApplicationController
     private
 
     def find_course
-        @course = Course.find_by(id: params[:id])
-        if @course
+        if @course = Course.find_by(id: params[:id])
             @course
         else
             redirect_to courses_path, alert: "Course doesn't exist!"
