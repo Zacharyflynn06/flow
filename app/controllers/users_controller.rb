@@ -42,6 +42,8 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
+        session.clear
+        redirect_to root_path
     end
 
     private

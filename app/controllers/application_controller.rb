@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
-        redirect_to root_path, alert: "You are not authorized to complete this action"
+        if !logged_in?
+            redirect_to login_path, alert: "You are not logged in"
+        end
     end
 
     def current_user
@@ -18,12 +20,13 @@ class ApplicationController < ActionController::Base
     
     def redirect_if_not_admin
         if !current_user.admin?
-            redirect_to root_path, alert: "You are not authorized to complete this action"
+            redirect_to root_path, alert: "You must be an admin tocomplete this action"
         end
     end
 
     def redirect_if_not_authorized
-        if current_user != params[:user_id]
+        byebug
+        if session[:user_id] != params[:id].to_i
             redirect_to root_path, alert: "You are not authorized to complete this action"
         end
     end

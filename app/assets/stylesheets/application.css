@@ -86,7 +86,7 @@
 
   hr{
     color: white;
-    width: 30%;
+    width: 10em;
   }
 
   a:link, a:visited{
@@ -185,7 +185,7 @@
     background-color: white;
     border: none;
     color: black;
-    padding: 15px 32px;
+    padding: 10px 20px;
     text-align: center;
     display: inline-block;
     font-size: 1.25em;
@@ -194,6 +194,7 @@
 
   a.button{
     color: black;
+    text-decoration: none;
   }
 
 
