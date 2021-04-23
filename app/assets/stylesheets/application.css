@@ -170,8 +170,8 @@
   }
   
   .contents{
-    display: flex;
-    flex-flow: column wrap;
+    /* display: flex;
+    flex-flow: column wrap; */
   }
 
   .button{
@@ -187,6 +187,12 @@
 
   li{
     flex-flow: column wrap;
+  }
+
+  .profile-pic{
+    border: 1px solid white;
+    width: 25em;
+    border-radius: 50%;
   }
 
 

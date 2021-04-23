@@ -2,6 +2,7 @@
 
 <h2><%= @user.first_name%> <%= @user.last_name %>'s Homepage</h2>
     <div class="contents">
+        <%= image_tag @user.avatar, class:"profile-pic" %>
         <h3>About Me</h3>
         <p><%= @user.bio %></p><br>
         <%= conditionally_present_teachers_courses @user %>

@@ -13,16 +13,17 @@ class User < ApplicationRecord
     has_many :students, -> {where("users.role = ?", User.roles[:student])}, through: :teacher_students, source: :student
     has_many :reviews, through: :given_courses
 
+    has_one_attached :avatar
+
     enum role: [:student, :teacher, :admin]
     
     validates :username, uniqueness: true
-    validates :bio, presence: true, if: lambda { self.role.to_s == 'teacher' }
+    validates :bio, presence: true
     validates :years_experience, presence: true, if: lambda { self.role.to_s == 'teacher' }
     
     has_secure_password
 
     def self.from_omniauth(response)
-        byebug
         User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
             u.first_name = response[:info][:first_name]
             u.last_name = response[:info][:last_name]
