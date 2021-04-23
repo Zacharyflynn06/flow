@@ -12,9 +12,18 @@
         <h3>Teacher: <%= link_to @course.teacher.full_name, user_path(@course.teacher.id) %></h3>
     </div>
     
+    Reviews:
+<% @course.reviews.each do |review| %>
+    <%= review.content  %>
+    <%= review.rating %>
+    <% if logged_in? && review.student = current_user %>
+        <%= link_to 'Edit my review', edit_review_path(review), id: review.id %>
+    <% end %>
+<% end %>
 </div>
 
-<%= render partial: 'review', locals: {course: @course} %>
+<%# conditionally_display_reviews @course %>
+
 
 <%= present_review_button_if_logged_in @course %>
 

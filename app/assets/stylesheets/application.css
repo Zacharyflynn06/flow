@@ -121,21 +121,8 @@
   }
 
   .button:hover {
-    color: #f2a154;
+    background-color: #f2a154;
   }
-
-  .button_to{
-    .button{
-      background-color: white;
-      border: none;
-      color: black;
-      padding: 15px 32px;
-      text-align: center;
-      display: inline-block;
-      font-size: 1.25em;
-    }
-  }
-  
 
   input{
     justify-content: center;
