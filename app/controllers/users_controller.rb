@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
     before_action :find_user, only: [:show, :edit, :update]
     before_action :redirect_if_not_logged_in, only: [:edit, :update]
+    before_action :redirect_if_not_authorized, only: [:edit, :update, :destroy]
 
     def new
         @user = User.new
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-        redirect_if_not_authorized
+        
     end
 
     def update
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-
+        @user.destroy
     end
 
     private

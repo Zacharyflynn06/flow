@@ -30,6 +30,9 @@ module CoursesHelper
             tag.div class: "button" do
                 link_to 'Edit Course', edit_course_path
             end
+            tag.div class: "button" do
+                button_to 'Delete Course', course_path(@course), method: :delete
+            end
         end
     end
 

@@ -1,20 +1,18 @@
 class CoursesController < ApplicationController
 
-    before_action :find_course, only: [:show, :edit, :update]
-    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update, :destroy]
+    before_action :find_course, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_if_not_admin, only: [:new, :create, :edit, :update, :destroy]
 
     def new
         if params[:user_id] && !User.exists?(params[:user_id])
-            redirect_to users_path, alret: "User not found"
+            redirect_to users_path, alert: "User already exists"
         else
             @course = Course.new(teacher_id: params[:user_id])
-
         end
     end
 
     def create
         @course = Course.new(course_params)
-        # byebug
         if @course.valid?
             @course.save
             redirect_to course_path(@course)
@@ -44,13 +42,13 @@ class CoursesController < ApplicationController
     end
 
     def show
-        @course = Course.find(params[:id])
-    end
 
+    end
+    
     def edit
         redirect_if_not_admin
     end
-
+    
     def update
         if @course.update(course_params)
             redirect_to course_path(@course)
@@ -58,16 +56,21 @@ class CoursesController < ApplicationController
             render :edit
         end
     end
-
+    
     def destroy
-        find_course
         @course.destroy
+        redirect_to root_path, alert: "Course was removed"
     end
 
     private
 
     def find_course
         @course = Course.find_by(id: params[:id])
+        if @course
+            @course
+        else
+            redirect_to courses_path, alert: "Course doesn't exist!"
+        end
     end
 
     def course_params
