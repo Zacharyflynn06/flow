@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     before_action :redirect_if_not_logged_in, only: [:edit, :update, :destroy]
     before_action :redirect_if_not_authorized, only: [:edit, :update, :destroy]
-    before_action :find_user, only: [:show, :edit, :update]
+    before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def new
         @user = User.new
@@ -11,7 +11,9 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.valid?
+            @user.role = "student"
             @user.save
+            session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
             render :new

@@ -9,7 +9,7 @@ module ReviewsHelper
                         concat content_tag :li, "Rating: #{review.rating}"
                         concat content_tag :li, review.content
                         if logged_in? && review.student == current_user
-                            concat link_to 'Edit my review', edit_review_path(review), id: review.id
+                            concat link_to 'Edit my review', edit_review_path(review), id: review.id, class: "button"
                         end
                         concat tag.hr
                     end.join.html_safe

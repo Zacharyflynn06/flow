@@ -192,6 +192,10 @@
     margin: 1em
   }
 
+  a.button{
+    color: black;
+  }
+
 
   li{
     flex-flow: column wrap;
@@ -211,8 +215,6 @@
     }
 
   
-
-
 /* Errors */
   .errors{
     display: flex;

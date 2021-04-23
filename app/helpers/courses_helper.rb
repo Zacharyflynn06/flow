@@ -27,12 +27,12 @@ module CoursesHelper
 
     def present_edit_course_button_if_admin
         if logged_in? && current_user.admin?
-            tag.div do
-                link_to 'Edit Course', edit_course_path, class: "button"
-            end
-            tag.div do
+            concat tag.div {
+                concat link_to 'Edit Course', edit_course_path, class: "button"
+            }
+            tag.div {
                 button_to 'Delete Course', course_path(@course), method: :delete, class: "button"
-            end
+            }
         end
     end
 
