@@ -21,9 +21,9 @@
   </ul>
 
   <body>
-    <div class="errors">
+    <div class="flash-errors">
       <% flash.each do |k,v| %>
-          <%= v %>
+         <li class="errors"><%= v %></li> 
       <% end %>
     </div>
 

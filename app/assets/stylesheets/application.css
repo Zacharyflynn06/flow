@@ -246,3 +246,12 @@
   li.errors{
     list-style-type: none;
   }
+
+  .flash-errors li.errors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #f2a154;
+    height: 3em;
+  }

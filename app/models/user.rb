@@ -17,7 +17,10 @@ class User < ApplicationRecord
 
     enum role: [:student, :teacher, :admin]
     
-    validates :username, uniqueness: true
+    validates :username, presence: true, uniqueness: true
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :email, presence: true, uniqueness: true 
     validates :bio, presence: true
     validates :years_experience, presence: true, if: lambda { self.role.to_s == 'teacher' }
     

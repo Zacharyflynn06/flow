@@ -2,14 +2,14 @@ module ApplicationHelper
 
     def conditionaly_present_nav_buttons
         if !logged_in?
-            concat tag.li {
-                link_to 'Login', login_path, class: "nav-bar-float-right"
+            concat content_tag(:li, class: "nav-bar-float-right")  {
+                link_to 'Login', login_path
             }
-            tag.li {
-                 link_to 'Sign Up', new_user_path, class: "nav-bar-float-right"
+            content_tag(:li, class: "nav-bar-float-right") {
+                 link_to 'Sign Up', new_user_path
             }
         else
-            tag.li {
+            content_tag(:li, class: "nav-bar-float-right")  {
                 link_to "Logout", logout_path, method: "post", class: "nav-bar-float-right"
             }
         end
