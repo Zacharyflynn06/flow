@@ -12,7 +12,6 @@ class Course < ApplicationRecord
   validate :check_duration
   validates :price, presence: true, numericality: { greater_than: 0}
   
-  # scope :filter_by_level, -> (level) {where(level: level)}
   # scope :alphabetically, -> {order(name: :desc)}
   # scope :recent, -> { order(:created_at, :desc) }
   scope :filter_by_level, -> (filter) {where("level = ?", filter)}
