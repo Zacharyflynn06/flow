@@ -17,12 +17,7 @@
       <li class="nav-bar"> <%= link_to 'Home', root_path %> </li>
       <li class="nav-bar"> <%= link_to 'Courses', courses_path %> </li>
       <li class="nav-bar"> <%= link_to 'Community', users_path %> </li>
-    <% if !logged_in? %>
-      <li class="nav-bar-float-right"> <%= link_to 'Login', login_path %> </li>
-      <li class="nav-bar-float-right"> <%= link_to 'Sign Up', new_user_path %></li>
-    <% else %>
-      <li class="nav-bar-float-right"> <%= link_to "Logout", logout_path, method: "post" %>
-    <% end %>
+      <%= conditionaly_present_nav_buttons %>
   </ul>
 
   <body>
@@ -34,4 +29,10 @@
 
     <%= yield %>
   </body>
+
+  <footer>
+   <div class = "footer">
+      <h6>&copy; "2021 Flow LLC"</h6>
+   </div>
+  </footer>
 </html>
