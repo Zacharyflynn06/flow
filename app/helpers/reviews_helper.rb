@@ -19,6 +19,7 @@ module ReviewsHelper
     end
 
     def conditionally_present_delete_review_button(review)
+        byebug
         if current_user.id == review.student.id
             button_to 'Delete Review', review_path(review), method: :delete, class: "button"
         end

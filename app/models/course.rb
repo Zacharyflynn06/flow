@@ -10,8 +10,8 @@ class Course < ApplicationRecord
   validates :day, presence: true, inclusion: %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
   validates :time, presence: true
   validate :check_duration
-  # validates :price, presence: true, numericality: { greater_than: 0}, :format => { :with => /^\d{1,6}(\.\d{0,2})?$/ }
-
+  validates :price, presence: true, numericality: { greater_than: 0}
+  
   # scope :filter_by_level, -> (level) {where(level: level)}
   # scope :alphabetically, -> {order(name: :desc)}
   # scope :recent, -> { order(:created_at, :desc) }

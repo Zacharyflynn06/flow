@@ -4,4 +4,5 @@
   <h1>Edit my review</h1>
   <h2>for <%= @review.course.name %></h2>
   <%= render partial: 'form', locals: {review: @review} %>
+  <%= conditionally_present_delete_review_button @review %>
 </div>

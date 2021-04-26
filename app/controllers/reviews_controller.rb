@@ -17,21 +17,6 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def index 
-        if params[:course_id]
-            @course = Course.find(params[:course_id])
-                if @course.nil?
-                    redirect_to courses_path, alert: "Course not Found"
-                else
-                    @reviews = @course.reviews
-                end
-        else
-        @reviews = @course.reviews
-        
-        end
-    end
-
-
     def edit
 
     end
