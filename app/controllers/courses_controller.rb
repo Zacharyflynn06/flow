@@ -6,11 +6,7 @@ class CoursesController < ApplicationController
 
 
     def new
-        if params[:user_id] && !User.exists?(params[:user_id])
-            redirect_to users_path, alert: "User already exists"
-        else
-            @course = Course.new(teacher_id: params[:user_id])
-        end
+        @course = Course.new(teacher_id: params[:user_id])
     end
 
     def create
