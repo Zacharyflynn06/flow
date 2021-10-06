@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_authorized
-        byebug
+        
         if session[:user_id] != params[:id].to_i
             redirect_to root_path, alert: "You are not authorized to complete this action"
         end

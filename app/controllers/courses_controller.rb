@@ -5,6 +5,11 @@ class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :edit, :update, :destroy]
 
 
+
+    def cheapest
+        @courses = Course.order(:price).limit(5)
+
+    end
     def new
         @course = Course.new(teacher_id: params[:user_id])
     end

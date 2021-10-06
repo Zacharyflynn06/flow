@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#landing_page'
 
+  get '/courses/cheapest', to: 'courses#cheapest'
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :reviews
+
   
   get 'auth/:provider/callback' => 'sessions#omniauth'
 end

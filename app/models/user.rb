@@ -37,6 +37,8 @@ class User < ApplicationRecord
             u.username = response[:info][:name]
             u.email = response[:info][:email]
             u.password = SecureRandom.hex(15)
+            u.role = "student"
+            u.bio = "Update this bio later!"
         end
     end
 
